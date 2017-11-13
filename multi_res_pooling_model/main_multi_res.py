@@ -9,13 +9,13 @@ import pickle
 
 # ===============================Hyper parameters========================
 para = parameters()
-samplingType = 'farthest_sampling'
+
 pointNumber = para.pointNumber
 neighborNumber = para.neighborNumber
 # ===============================Build model=============================
 trainOperaion, sess = model_architecture(para)
 # ================================Load data===============================
-inputTrain, trainLabel, inputTest, testLabel = load_data(pointNumber, samplingType)
+inputTrain, trainLabel, inputTest, testLabel = load_data(pointNumber, para.samplingType)
 scaledLaplacianTrain, scaledLaplacianTest = prepareData(inputTrain, inputTest, neighborNumber, pointNumber)
 # ===============================Train model ================================
 
@@ -26,6 +26,7 @@ modelDir = para.modelDir
 save_model_path = modelDir + "model_" + para.fileName
 weight_dict = weight_dict_fc(trainLabel, para)
 
+#ground truth for the test set
 testLabelWhole = []
 for i in range(len(testLabel)):
     labels = testLabel[i]
@@ -35,17 +36,19 @@ testLabelWhole = np.asarray(testLabelWhole)
 test_acc_record = []
 test_mean_acc_record = []
 
-for epoch in range(300):
+for epoch in range(para.maxEpoch):
     print('===========================epoch {}===================='.format(epoch))
+    # decay learning rate every 20 epoch
     if (epoch % 20 == 0):
         learningRate = learningRate / 1.7
-    learningRate = np.max([learningRate, 8e-6])
+    learningRate = np.max([learningRate, 1e-6])
     print(learningRate)
     #training step
     train_average_loss, train_average_acc, loss_reg_average = trainOneEpoch(inputTrain, scaledLaplacianTrain, trainLabel,
                                                                             para, sess, trainOperaion,
                                                                             weight_dict, learningRate)
 
+    # save model after every epoch
     save = saver.save(sess, save_model_path)
     print('=============average loss, l2 loss, acc  for this epoch is {} {} and {}======'.format(train_average_loss,
                                                                                                  loss_reg_average,

@@ -18,17 +18,19 @@ class parameters():
         self.testBatchSize = 1
         self.learningRate = 12e-4
         self.weight_scaler = 40
+        self.maxEpoch = 50
 
-        self.gcn_1_filter_n = 1000
-        self.gcn_2_filter_n = 1000
-        self.fc_1_n = 300 #600
+        self.gcn_1_filter_n = 1000 # filter number of the first gcn layer
+        self.gcn_2_filter_n = 1000 # filter number of the second gcn layer
+        self.fc_1_n = 300          # fully connected layer dimension
+        self.samplingType = 'farthest_sampling'
 
         #multi res parameters
-        self.clusterNumberL1 = 35
-        self.nearestNeighborL1 = 56
+        self.clusterNumberL1 = 35 #layer one convolutional layer's cluster number
+        self.nearestNeighborL1 = 56 #nearest neighbor number of each centroid points when performing max pooling in first gcn
 
-        self.clusterNumberL2 = 4
-        self.nearestNeighborL2 = 10
+        self.clusterNumberL2 = 4 #layer two convolutional layer's cluster number
+        self.nearestNeighborL2 = 10 #nearest neighbor number of each centroid points when performing max pooling in second gcn
         
         
 

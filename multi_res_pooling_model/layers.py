@@ -1,18 +1,19 @@
 import tensorflow as tf
 def weightVariables(shape, name):
+    # Description: define weight matrix
     initial = tf.truncated_normal(shape=shape, mean=0, stddev=0.05)
     return tf.Variable(initial, name=name)
 
-
 def chebyshevCoefficient(chebyshevOrder, inputNumber, outputNumber):
+    # Description: define weight matrix in graph convolutional layer
     chebyshevWeights = dict()
     for i in range(chebyshevOrder):
         initial = tf.truncated_normal(shape=[inputNumber, outputNumber], mean=0, stddev=0.05)
         chebyshevWeights['w_' + str(i)] = tf.Variable(initial)
     return chebyshevWeights
 
-
 def gcnLayer(inputPC, scaledLaplacian, pointNumber, inputFeatureN, outputFeatureN, chebyshev_order):
+    # Description: graph convolutional layer with Relu activation
     biasWeight = weightVariables([outputFeatureN], name='bias_w')
     chebyshevCoeff = chebyshevCoefficient(chebyshev_order, inputFeatureN, outputFeatureN)
     chebyPoly = []
@@ -40,6 +41,7 @@ def gcnLayer(inputPC, scaledLaplacian, pointNumber, inputFeatureN, outputFeature
 
 
 def globalPooling(gcnOutput, featureNumber):
+    # Description: pooling layer with global statistical pooling containing max and variance of each feature map
     mean, var = tf.nn.moments(gcnOutput, axes=[1])
     max_pooling = tf.reduce_max(gcnOutput, axis=[1])
     poolingOutput = tf.concat([max_pooling, var], axis=1)
@@ -47,6 +49,7 @@ def globalPooling(gcnOutput, featureNumber):
 
 
 def graph_cluster_maxpooling(batch_index, batch_feature_maps, batch_size,M, k, n):
+    # Description: max pooling on each of the cluster
     # input: (1)index function: B*M*k (batch_index)
     #       (2)feature maps: B*N*n1 (batch_feature_maps)
     #       (3) batch_size
@@ -69,6 +72,7 @@ def graph_cluster_maxpooling(batch_index, batch_feature_maps, batch_size,M, k, n
 
 #fully connected layer without relu activation
 def fullyConnected(features, inputFeatureN, outputFeatureN):
+    # Description: fully connected layer without relu activation
     weightFC = weightVariables([inputFeatureN, outputFeatureN], name='weight_fc')
     biasFC = weightVariables([outputFeatureN], name='bias_fc')
     outputFC = tf.matmul(features,weightFC)+biasFC
