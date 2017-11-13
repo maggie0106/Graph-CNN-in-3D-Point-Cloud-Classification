@@ -13,6 +13,10 @@ import numpy as np
 from scipy.spatial import cKDTree
 import pickle
 def farthestSampling(file_names, NUM_POINT):
+    #Description: load point cloud data into dictionary format {key: batch index, value: batch data or labels}
+    #               containing each batch of the data (data prepared by farthest sampling)
+    #input: (1)file name (2) point number
+    #return: (1) input data dictionary (2) input data label
     file_indexs = np.arange(0, len(file_names))
     inputData = dict()
     inputLabel = dict()
@@ -26,6 +30,11 @@ def farthestSampling(file_names, NUM_POINT):
     return inputData, inputLabel
 
 def uniformSampling(file_names, NUM_POINT):
+    #Description: load point cloud data into dictionary format {key: batch index, value: batch data or labels}
+    #                       containing each batch of the data (data prepared by uniform sampling)
+
+    #input: (1)file name (2) point number
+    #return: (1) input data dictionary (2) input data label
     file_indexs = np.arange(0, len(file_names))
     inputData = dict()
     inputLabel = dict()
@@ -41,19 +50,19 @@ def uniformSampling(file_names, NUM_POINT):
         inputLabel.update({index : current_label})
     return inputData, inputLabel
 
-# ModelNet40 official train/test split
+
 def load_data(NUM_POINT, sampleType):
-    #BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    #BASE_DIR= os.path.abspath(os.path.dirname(os.getcwd()))
-    
-    #print BASE_DIR
+    #Description: load training and testing data and its corresponding label
+    #input: (1)NUM_POINT: point number (2)sampleType: data preparation method
+    #return: (1) training set data  (2) training set label
+    #        (3) testing set data   (4) testing set label
+
     BASE_DIR = '/raid60/yingxue.zhang2/ICASSP_code/'    
     TRAIN_FILES = utils.getDataFiles( \
         os.path.join(BASE_DIR, 'data/modelnet40_ply_hdf5_2048/train_files.txt'))
     TEST_FILES = utils.getDataFiles(\
         os.path.join(BASE_DIR, 'data/modelnet40_ply_hdf5_2048/test_files.txt'))
-    
-    #np.random.shuffle(train_file_idxs)
+
     if sampleType == 'farthest_sampling':
         inputTrainFarthest, inputTrainLabel = farthestSampling(TRAIN_FILES, NUM_POINT)
         inputTestFathest, inputTestLabel = farthestSampling(TEST_FILES, NUM_POINT)
@@ -67,12 +76,15 @@ def load_data(NUM_POINT, sampleType):
 
 
 
-#generate graph structure and store in the system
 def prepareGraph(inputData, neighborNumber, pointNumber, dataType):
+    #Description: generate graph structure and store in the system for reuse
+    #input: (1)inputData: input point coordinates (2)neighborNumber: neighbor number when constructing nearest neighbor graph
+    #       (3)pointNumber: point number of each object (4)dataType: training set or testing set
+    #return: scaled Laplacian matrix of each object
+
     scaledLaplacianDict = dict()
     #baseDir = os.path.dirname(os.path.abspath(__file__))
-    baseDir ='/raid60/yingxue.zhang2/ICASSP_code'  
-    #baseDir= os.path.abspath(os.path.dirname(os.getcwd()))
+    baseDir ='/raid60/yingxue.zhang2/ICASSP_code'
     fileDir =  baseDir+ '/graph/' + dataType+'_pn_'+str(pointNumber)+'_nn_'+str(neighborNumber)
     if (not os.path.isdir(fileDir)):
         print "calculating the graph data"
@@ -103,6 +115,8 @@ def prepareGraph(inputData, neighborNumber, pointNumber, dataType):
 
 
 def loadGraph(inputData, neighborNumber, pointNumber, fileDir):
+    #Description: load graph from RAM if it already exists
+
     scaledLaplacianDict = dict()
     for batchIndex in range(len(inputData)):
         batchDataDir = fileDir+'/batchGraph_'+str(batchIndex)
@@ -114,6 +128,9 @@ def loadGraph(inputData, neighborNumber, pointNumber, fileDir):
         
                         
 def prepareData(inputTrain, inputTest, neighborNumber, pointNumber):
+    #Description: prepare input graph data
+    # input: (1)inputTrain: training data (2)inputTest: testing data
+    # (3) neighborNumber: neighbor number when constructing nearest neighbor graph (4) pointNumber: point number of object
     scaledLaplacianTrain = prepareGraph(inputTrain, neighborNumber, pointNumber, 'train',)
     scaledLaplacianTest = prepareGraph(inputTest, neighborNumber, pointNumber, 'test')
     return scaledLaplacianTrain, scaledLaplacianTest
