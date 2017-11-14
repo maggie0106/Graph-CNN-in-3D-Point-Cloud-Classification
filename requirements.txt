@@ -1,0 +1,7 @@
+numpy
+scipy
+scikit-learn
+gensim
+tensorflow-gpu
+#tensorflow
+
