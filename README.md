@@ -50,13 +50,9 @@ Michaël Defferrard, Xavier Bresson, Pierre Vandergheynst, Convolutional Neural 
 Thomas N. Kipf, Max Welling, Semi-Supervised Classification with Graph Convolutional Networks (ICLR 2017)
 3. PointNet https://github.com/charlesq34/pointnet    
 Charles R. Qi, Hao Su, Kaichun Mo, Leonidas J. Guibas, PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation (CVPR 2017)
-
-
-## Authors
-
+## Using scope
+This implementation can be used to achieve 3D point cloud classification and can be easily applied to point cloud part segmentation by simply removing the global features aggregation process to achieve pointwise classification. This model also has the potential to extend into any problem relate to the interaction between graph structure and graph signal or purely graph classification problem.
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md] file for details
-
 ## Acknowledgments
 
