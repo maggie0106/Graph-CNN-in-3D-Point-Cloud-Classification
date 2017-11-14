@@ -25,7 +25,7 @@ git clone git@github.com:maggie0106/Graph-CNN-in-3D-Point-Cloud-Classification.g
 ```
 pip install -r requirements.txt
 ```
-3. Download data
+3. Download data＜/br＞
 We are using the data from 3D benchmark data set ModelNet http://modelnet.cs.princeton.edu/ 
 The mesh polygon data format from ModelNet is preprocessed into Point Cloud format by  Charles R. Qi et al. (PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation, CVPR 2017 https://arxiv.org/abs/1612.00593)
 ```
@@ -46,13 +46,6 @@ git clone git@github.com:maggie0106/Graph-CNN-in-3D-Point-Cloud-Classification.g
 
 ```
 pip install -r requirements.txt
-```
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
 ```
 
 ## Authors
