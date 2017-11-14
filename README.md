@@ -36,7 +36,7 @@ https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip
 ## Model
 You choose between two models using different pooling scheme including global pooling and multi-resolution pooling.
 * global pooling: no subsampling process, only aims at picking the global features.
-* multi-resolution pooling: doing subsampling after each convolutional layer to shrink the graph dimension by farthest subsampling and clustering
+* multi-resolution pooling: doing subsampling after each convolutional layer to shrink the graph dimension by farthest subsampling a subset of centroid points and preform max-pooling on each cluter formed by the nearest neighbor around each point in the subset.
 
 ## Run the demo
 ### To run global pooling model
