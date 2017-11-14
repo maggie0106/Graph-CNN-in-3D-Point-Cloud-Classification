@@ -1,11 +1,8 @@
 # Graph-CNN-in-3D-Point-Cloud-Classification
 
-One Paragraph of project description goes here
+This is a TensorFlow implementation of using graph convolutional neural network to solve 3D point cloud classification problem. Details are decribed in the short paper A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION and master project report in the folder Documents.
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 ```
 Python 2.7
@@ -31,7 +28,7 @@ Download the data and put it in the data folder from the following link:
 https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip 
 ```
 ## Model
-You choose between two models using different pooling scheme including global pooling and multi-resolution pooling.
+You can choose between two models using different pooling scheme including global pooling and multi-resolution pooling. And two training schemes have been provided to alleviate the unbalanced data, please change the batchWeight line in the model.py accordingly. 
 * global pooling: no subsampling process, only aims at picking the global features.
 * multi-resolution pooling: doing subsampling after each convolutional layer to shrink the graph dimension by farthest subsampling a subset of centroid points and preform max-pooling on each cluter formed by the nearest neighbor around each point in the subset.
 
