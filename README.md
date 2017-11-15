@@ -1,11 +1,8 @@
 # Graph-CNN-in-3D-Point-Cloud-Classification
 
-One Paragraph of project description goes here
+This is a TensorFlow implementation of using graph convolutional neural network to solve 3D point cloud classification problem. Details are decribed in the short paper A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION and master project report in the folder Documents.
 
 ## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Prerequisites
 ```
 Python 2.7
@@ -31,7 +28,7 @@ Download the data and put it in the data folder from the following link:
 https://shapenet.cs.stanford.edu/media/modelnet40_ply_hdf5_2048.zip 
 ```
 ## Model
-You choose between two models using different pooling scheme including global pooling and multi-resolution pooling.
+You can choose between two models using different pooling scheme including global pooling and multi-resolution pooling. And two training schemes have been provided to alleviate the unbalanced data, please change the batchWeight line in the model.py accordingly. 
 * global pooling: no subsampling process, only aims at picking the global features.
 * multi-resolution pooling: doing subsampling after each convolutional layer to shrink the graph dimension by farthest subsampling a subset of centroid points and preform max-pooling on each cluter formed by the nearest neighbor around each point in the subset.
 
@@ -53,13 +50,9 @@ Michaël Defferrard, Xavier Bresson, Pierre Vandergheynst, Convolutional Neural 
 Thomas N. Kipf, Max Welling, Semi-Supervised Classification with Graph Convolutional Networks (ICLR 2017)
 3. PointNet https://github.com/charlesq34/pointnet    
 Charles R. Qi, Hao Su, Kaichun Mo, Leonidas J. Guibas, PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation (CVPR 2017)
-
-
-## Authors
-
+## Using scope
+This implementation can be used to achieve 3D point cloud classification and can be easily applied to point cloud part segmentation by simply removing the global features aggregation process to achieve pointwise classification. This model also has the potential to extend into any problem relate to the interaction between graph structure and graph signal or purely graph classification problem.
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE.md] file for details
-
 ## Acknowledgments
 
