@@ -1,0 +1,1358 @@
+[01;32m 
+       _ _                                                     _ _ _
+  __ _(_) |__  ___  ___  _ __    ___ ___   _ __ ___   ___ __ _(_) | |  ___ __ _
+ / _` | | '_ \/ __|/ _ \| '_ \  / __/ __| | '_ ` _ \ / __/ _` | | | | / __/ _` |
+| (_| | | |_) \__ \ (_) | | | || (__\__ \_| | | | | | (_| (_| | | | || (_| (_| |
+ \__, |_|_.__/|___/\___/|_| |_(_)___|___(_)_| |_| |_|\___\__, |_|_|_(_)___\__,_|
+ |___/                                                   |___/
+ [0m
+  Last Login....: Tue Jan 9 06:07:56 from 222.131.118.200
+  Uptime........: 21 days 18 hours 23 minutes 52 seconds
+  Load..........: 2.30 (1minute) -- 1.96 (5minutes) -- 1.79 (15minutes)
+  Memory MB.....: Total: 775366 -- Used: 296786 -- Free: 478580 -- Free Cached: 726563 -- Swap In Use: 74
+  Temperature...: Avg CPU Temp: 39.375 C -- Disk /dev/sda: 8 C -- Disk /dev/sdb: 7 C
+  Disk Usage....: You're using 108282MB in /home/yingxue.zhang2
+  SSH Logins....: There are currently 1 users logged in.
+  Processes.....: 1573 total running of which 10 are yours
+  Weather.......:   
+
+[01;32m  ::::::::::::::::::::::::::::::::::-RULES-::::::::::::::::::::::::::::::::::
+    This is a private system that you are not to give out access to anyone
+    without permission from the admin. No illegal files or activity.
+[0m
+
+2018-01-09 06:13:42.220369: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-09 06:13:42.220454: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-09 06:13:42.220463: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-01-09 06:13:42.458259: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:47:00.0
+Total memory: 11.25GiB
+Free memory: 11.12GiB
+2018-01-09 06:13:42.458346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
+2018-01-09 06:13:42.458355: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
+2018-01-09 06:13:42.458370: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K40m, pci bus id: 0000:47:00.0)
+Dataset ModelNet40
+The point number and the nearest neighbor number is 1024 and 40
+The first and second layer filter number is 1000 and 1000
+The fc neuron number is 600 and the output number is 40
+The Chebyshev polynomial order for each layer are 4 and 3
+The weighting scheme is weighted and the weighting scaler is 40
+The output of the first gcn layer is Tensor("concat:0", shape=(?, 2000), dtype=float32)
+Tensor("concat:0", shape=(?, 2000), dtype=float32)
+The output of the second gcn layer is Tensor("concat_1:0", shape=(?, 2000), dtype=float32)
+The global feature is Tensor("dropout_2/mul:0", shape=(?, 4000), dtype=float32)
+The output of the first fc layer is Tensor("dropout_3/mul:0", shape=(?, 600), dtype=float32)
+The output of the second fc layer is Tensor("add_3:0", shape=(?, 40), dtype=float32)
+Total parameters number is 5438640
+Loading the graph data from trainData
+Finish loading batch_0
+Finish loading batch_1
+Finish loading batch_2
+Finish loading batch_3
+Finish loading batch_4
+Loading the graph data from testData
+Finish loading batch_0
+Finish loading batch_1
+===========================epoch 0====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 4.29149341583 0.0391807556152 and 0.371183931828======
+the average acc among 40 class is:0.450843023256
+===========average loss and acc for this epoch is 1.72632944584 and 0.513371169567=======
+===========================epoch 1====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 2.74448847771 0.0395007953048 and 0.574655890465======
+the average acc among 40 class is:0.571802325581
+===========average loss and acc for this epoch is 1.14227795601 and 0.675040543079=======
+===========================epoch 2====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 2.15808963776 0.0408603027463 and 0.65305018425======
+the average acc among 40 class is:0.63436627907
+===========average loss and acc for this epoch is 0.961267888546 and 0.717585086823=======
+===========================epoch 3====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.87336564064 0.0422722995281 and 0.697159051895======
+the average acc among 40 class is:0.669180232558
+===========average loss and acc for this epoch is 0.840151965618 and 0.747974097729=======
+===========================epoch 4====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.64323425293 0.0437165088952 and 0.733303546906======
+the average acc among 40 class is:0.726988372093
+===========average loss and acc for this epoch is 0.717700839043 and 0.782820105553=======
+===========================epoch 5====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.49771296978 0.0451001003385 and 0.754288375378======
+the average acc among 40 class is:0.720290697674
+===========average loss and acc for this epoch is 0.688106775284 and 0.78768235445=======
+===========================epoch 6====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.38007807732 0.0464146137238 and 0.77445679903======
+the average acc among 40 class is:0.748686046512
+===========average loss and acc for this epoch is 0.646271944046 and 0.797811985016=======
+===========================epoch 7====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.31213366985 0.0476896055043 and 0.78926718235======
+the average acc among 40 class is:0.752488372093
+===========average loss and acc for this epoch is 0.641866922379 and 0.793354928493=======
+===========================epoch 8====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.24240505695 0.048848927021 and 0.796870589256======
+the average acc among 40 class is:0.759063953488
+===========average loss and acc for this epoch is 0.617132127285 and 0.808346867561=======
+===========================epoch 9====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.15199887753 0.0500700250268 and 0.811994850636======
+the average acc among 40 class is:0.781854651163
+===========average loss and acc for this epoch is 0.547384262085 and 0.832658052444=======
+===========================epoch 10====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.11741423607 0.0511716231704 and 0.815119147301======
+the average acc among 40 class is:0.786941860465
+===========average loss and acc for this epoch is 0.564711332321 and 0.828606188297=======
+===========================epoch 11====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.08485949039 0.0523275844753 and 0.824109256268======
+the average acc among 40 class is:0.792220930233
+===========average loss and acc for this epoch is 0.509383141994 and 0.836304724216=======
+===========================epoch 12====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.03068935871 0.0533613152802 and 0.831228554249======
+the average acc among 40 class is:0.807174418605
+===========average loss and acc for this epoch is 0.481611192226 and 0.849270641804=======
+===========================epoch 13====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.00251305103 0.0544417500496 and 0.830182552338======
+the average acc among 40 class is:0.79551744186
+===========average loss and acc for this epoch is 0.490880936384 and 0.839141011238=======
+===========================epoch 14====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.970670580864 0.0555360913277 and 0.83913898468======
+the average acc among 40 class is:0.793680232558
+===========average loss and acc for this epoch is 0.457409322262 and 0.857779562473=======
+===========================epoch 15====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.936817169189 0.0566363334656 and 0.848156154156======
+the average acc among 40 class is:0.812046511628
+===========average loss and acc for this epoch is 0.471871197224 and 0.853322505951=======
+===========================epoch 16====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.951237559319 0.0577310211957 and 0.841581702232======
+the average acc among 40 class is:0.811226744186
+===========average loss and acc for this epoch is 0.477380305529 and 0.850081026554=======
+===========================epoch 17====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.880572199821 0.0587415508926 and 0.852584540844======
+the average acc among 40 class is:0.823546511628
+===========average loss and acc for this epoch is 0.468150317669 and 0.857779562473=======
+===========================epoch 18====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.875224471092 0.0597574189305 and 0.857689499855======
+the average acc among 40 class is:0.81113372093
+===========average loss and acc for this epoch is 0.471693485975 and 0.854943275452=======
+===========================epoch 19====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.858755707741 0.0609611868858 and 0.854936301708======
+the average acc among 40 class is:0.807918604651
+===========average loss and acc for this epoch is 0.439152210951 and 0.861426234245=======
+===========================epoch 20====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.76368534565 0.061443246901 and 0.868523597717======
+the average acc among 40 class is:0.840430232558
+===========average loss and acc for this epoch is 0.413359373808 and 0.876823365688=======
+===========================epoch 21====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.720294475555 0.0613672360778 and 0.880145430565======
+the average acc among 40 class is:0.82826744186
+===========average loss and acc for this epoch is 0.406235963106 and 0.87034034729=======
+===========================epoch 22====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.722534179688 0.0612661354244 and 0.881463050842======
+the average acc among 40 class is:0.839052325581
+===========average loss and acc for this epoch is 0.400122761726 and 0.878444075584=======
+===========================epoch 23====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.694412410259 0.0611857660115 and 0.885645091534======
+the average acc among 40 class is:0.844093023256
+===========average loss and acc for this epoch is 0.396823585033 and 0.881280362606=======
+===========================epoch 24====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.681622385979 0.0611197054386 and 0.884761154652======
+the average acc among 40 class is:0.827924418605
+===========average loss and acc for this epoch is 0.439345300198 and 0.858589947224=======
+===========================epoch 25====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.679021537304 0.0611395947635 and 0.888486027718======
+the average acc among 40 class is:0.841215116279
+===========average loss and acc for this epoch is 0.403865665197 and 0.873987019062=======
+===========================epoch 26====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.662453591824 0.0611750967801 and 0.891946196556======
+the average acc among 40 class is:0.838587209302
+===========average loss and acc for this epoch is 0.393858611584 and 0.880064845085=======
+===========================epoch 27====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.661361515522 0.0612123794854 and 0.892443954945======
+the average acc among 40 class is:0.842058139535
+===========average loss and acc for this epoch is 0.40493285656 and 0.874797403812=======
+===========================epoch 28====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.656814813614 0.0612971410155 and 0.891844928265======
+the average acc among 40 class is:0.834837209302
+===========average loss and acc for this epoch is 0.403877854347 and 0.873176634312=======
+===========================epoch 29====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.644614100456 0.0613857135177 and 0.890922188759======
+the average acc among 40 class is:0.830093023256
+===========average loss and acc for this epoch is 0.413989424706 and 0.871961116791=======
+===========================epoch 30====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.636389374733 0.0614924617112 and 0.892983734608======
+the average acc among 40 class is:0.826790697674
+===========average loss and acc for this epoch is 0.420474469662 and 0.866693675518=======
+===========================epoch 31====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.636943817139 0.0616648569703 and 0.890723049641======
+the average acc among 40 class is:0.844674418605
+===========average loss and acc for this epoch is 0.391018301249 and 0.876012980938=======
+===========================epoch 32====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.60391330719 0.0618100091815 and 0.899944424629======
+the average acc among 40 class is:0.848215116279
+===========average loss and acc for this epoch is 0.406038850546 and 0.877228498459=======
+===========================epoch 33====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.617172837257 0.0619486272335 and 0.897236704826======
+the average acc among 40 class is:0.846215116279
+===========average loss and acc for this epoch is 0.382207602262 and 0.885332226753=======
+===========================epoch 34====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.615982651711 0.0621323809028 and 0.895956158638======
+the average acc among 40 class is:0.845918604651
+===========average loss and acc for this epoch is 0.396504372358 and 0.877633690834=======
+===========================epoch 35====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.581884264946 0.0623025409877 and 0.900976836681======
+the average acc among 40 class is:0.842215116279
+===========average loss and acc for this epoch is 0.400626629591 and 0.877228498459=======
+===========================epoch 36====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.597228944302 0.0624538064003 and 0.899107635021======
+the average acc among 40 class is:0.849918604651
+===========average loss and acc for this epoch is 0.400251090527 and 0.880875229836=======
+===========================epoch 37====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.578160405159 0.062662974 and 0.904684901237======
+the average acc among 40 class is:0.838598837209
+===========average loss and acc for this epoch is 0.397492140532 and 0.876012980938=======
+===========================epoch 38====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.575486540794 0.0629264265299 and 0.90739428997======
+the average acc among 40 class is:0.844255813953
+===========average loss and acc for this epoch is 0.401637434959 and 0.875607788563=======
+===========================epoch 39====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.559792041779 0.0631543546915 and 0.906684041023======
+the average acc among 40 class is:0.85163372093
+===========average loss and acc for this epoch is 0.384767621756 and 0.882495939732=======
+===========================epoch 40====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.527086377144 0.0632348582149 and 0.914020895958======
+the average acc among 40 class is:0.860720930233
+===========average loss and acc for this epoch is 0.374066889286 and 0.887358188629=======
+===========================epoch 41====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.504503846169 0.0632110238075 and 0.917975246906======
+the average acc among 40 class is:0.860465116279
+===========average loss and acc for this epoch is 0.382127076387 and 0.886952996254=======
+===========================epoch 42====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.490565150976 0.0631582885981 and 0.91896045208======
+the average acc among 40 class is:0.856174418605
+===========average loss and acc for this epoch is 0.373594671488 and 0.887358188629=======
+===========================epoch 43====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.489466965199 0.0631076991558 and 0.920298397541======
+the average acc among 40 class is:0.855302325581
+===========average loss and acc for this epoch is 0.379220843315 and 0.886142611504=======
+===========================epoch 44====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.487580001354 0.0630739703774 and 0.918240189552======
+the average acc among 40 class is:0.851639534884
+===========average loss and acc for this epoch is 0.383447915316 and 0.881280362606=======
+===========================epoch 45====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.491678565741 0.0630561336875 and 0.918635010719======
+the average acc among 40 class is:0.849127906977
+===========average loss and acc for this epoch is 0.377536028624 and 0.882090747356=======
+===========================epoch 46====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.475991398096 0.063018783927 and 0.920635700226======
+the average acc among 40 class is:0.860052325581
+===========average loss and acc for this epoch is 0.378109514713 and 0.885737419128=======
+===========================epoch 47====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.479530513287 0.0629785209894 and 0.921077728271======
+the average acc among 40 class is:0.857087209302
+===========average loss and acc for this epoch is 0.37053501606 and 0.88816857338=======
+===========================epoch 48====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.475922644138 0.0629628002644 and 0.922287344933======
+the average acc among 40 class is:0.858761627907
+===========average loss and acc for this epoch is 0.372854232788 and 0.887358188629=======
+===========================epoch 49====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.465940624475 0.0629582107067 and 0.921722114086======
+the average acc among 40 class is:0.857465116279
+===========average loss and acc for this epoch is 0.37601172924 and 0.886142611504=======
+===========================epoch 50====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.464224904776 0.0629672631621 and 0.92300093174======
+the average acc among 40 class is:0.855255813953
+===========average loss and acc for this epoch is 0.374850392342 and 0.886547803879=======
+===========================epoch 51====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.455933630466 0.0629529803991 and 0.925295352936======
+the average acc among 40 class is:0.861343023256
+===========average loss and acc for this epoch is 0.38002371788 and 0.885332226753=======
+===========================epoch 52====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.455152750015 0.06294696033 and 0.923950791359======
+the average acc among 40 class is:0.862255813953
+===========average loss and acc for this epoch is 0.373389899731 and 0.891815245152=======
+===========================epoch 53====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.444830358028 0.0629325956106 and 0.927687466145======
+the average acc among 40 class is:0.851093023256
+===========average loss and acc for this epoch is 0.367728173733 and 0.885737419128=======
+===========================epoch 54====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.459961086512 0.0629639476538 and 0.924455046654======
+the average acc among 40 class is:0.855848837209
+===========average loss and acc for this epoch is 0.387018382549 and 0.880064845085=======
+===========================epoch 55====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.446354150772 0.062964938581 and 0.924310088158======
+the average acc among 40 class is:0.860837209302
+===========average loss and acc for this epoch is 0.374420136213 and 0.887358188629=======
+===========================epoch 56====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.431881904602 0.0629848986864 and 0.93111884594======
+the average acc among 40 class is:0.860052325581
+===========average loss and acc for this epoch is 0.373230189085 and 0.885737419128=======
+===========================epoch 57====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.440124094486 0.0629964694381 and 0.927842736244======
+the average acc among 40 class is:0.86263372093
+===========average loss and acc for this epoch is 0.371509075165 and 0.888573765755=======
+===========================epoch 58====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.437592506409 0.0630247965455 and 0.928331971169======
+the average acc among 40 class is:0.859552325581
+===========average loss and acc for this epoch is 0.371993213892 and 0.88816857338=======
+===========================epoch 59====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.428537905216 0.0630457624793 and 0.92813283205======
+the average acc among 40 class is:0.856674418605
+===========average loss and acc for this epoch is 0.381016075611 and 0.884116709232=======
+===========================epoch 60====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.412617683411 0.0630534887314 and 0.932126164436======
+the average acc among 40 class is:0.865296511628
+===========average loss and acc for this epoch is 0.371275514364 and 0.890599668026=======
+===========================epoch 61====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.406039565802 0.0630283951759 and 0.935926914215======
+the average acc among 40 class is:0.860802325581
+===========average loss and acc for this epoch is 0.37159845233 and 0.88897895813=======
+===========================epoch 62====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.41017216444 0.0629904717207 and 0.935351669788======
+the average acc among 40 class is:0.857174418605
+===========average loss and acc for this epoch is 0.372252613306 and 0.88816857338=======
+===========================epoch 63====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392715781927 0.0629691034555 and 0.932495594025======
+the average acc among 40 class is:0.860755813953
+===========average loss and acc for this epoch is 0.366061329842 and 0.890194475651=======
+===========================epoch 64====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392023324966 0.0629405155778 and 0.936296284199======
+the average acc among 40 class is:0.869837209302
+===========average loss and acc for this epoch is 0.366677761078 and 0.894651532173=======
+===========================epoch 65====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.396464556456 0.0628960132599 and 0.934891104698======
+the average acc among 40 class is:0.86588372093
+===========average loss and acc for this epoch is 0.364274859428 and 0.893030822277=======
+===========================epoch 66====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.400301218033 0.0628750920296 and 0.936659038067======
+the average acc among 40 class is:0.864220930233
+===========average loss and acc for this epoch is 0.370145112276 and 0.891815245152=======
+===========================epoch 67====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38352265954 0.0628463029861 and 0.937814712524======
+the average acc among 40 class is:0.867093023256
+===========average loss and acc for this epoch is 0.366104960442 and 0.892220437527=======
+===========================epoch 68====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.400515645742 0.0628237202764 and 0.935279071331======
+the average acc among 40 class is:0.865337209302
+===========average loss and acc for this epoch is 0.372344732285 and 0.892220437527=======
+===========================epoch 69====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.386272549629 0.0628047138453 and 0.937764048576======
+the average acc among 40 class is:0.868296511628
+===========average loss and acc for this epoch is 0.368213295937 and 0.894651532173=======
+===========================epoch 70====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.393596827984 0.0627880841494 and 0.936611950397======
+the average acc among 40 class is:0.868505813953
+===========average loss and acc for this epoch is 0.36351069808 and 0.895867109299=======
+===========================epoch 71====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.382184356451 0.0627790540457 and 0.938749313354======
+the average acc among 40 class is:0.863843023256
+===========average loss and acc for this epoch is 0.367906033993 and 0.891004860401=======
+===========================epoch 72====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.386817991734 0.0627572983503 and 0.936836242676======
+the average acc among 40 class is:0.86038372093
+===========average loss and acc for this epoch is 0.373001664877 and 0.8893840909=======
+===========================epoch 73====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.381797790527 0.0627480894327 and 0.937890529633======
+the average acc among 40 class is:0.865465116279
+===========average loss and acc for this epoch is 0.376194179058 and 0.88897895813=======
+===========================epoch 74====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.374963253736 0.0627347379923 and 0.941413104534======
+the average acc among 40 class is:0.864215116279
+===========average loss and acc for this epoch is 0.369462043047 and 0.890599668026=======
+===========================epoch 75====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.368310987949 0.0627205520868 and 0.942594051361======
+the average acc among 40 class is:0.864924418605
+===========average loss and acc for this epoch is 0.3645619452 and 0.894651532173=======
+===========================epoch 76====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.380396455526 0.0627118572593 and 0.937941193581======
+the average acc among 40 class is:0.868674418605
+===========average loss and acc for this epoch is 0.364913970232 and 0.894246339798=======
+===========================epoch 77====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.376171708107 0.0626958161592 and 0.938963532448======
+the average acc among 40 class is:0.861924418605
+===========average loss and acc for this epoch is 0.370686769485 and 0.889789283276=======
+===========================epoch 78====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.360016912222 0.0626814961433 and 0.943663597107======
+the average acc among 40 class is:0.860889534884
+===========average loss and acc for this epoch is 0.370257347822 and 0.887763381004=======
+===========================epoch 79====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.365012019873 0.0626667886972 and 0.93966370821======
+the average acc among 40 class is:0.856924418605
+===========average loss and acc for this epoch is 0.378867864609 and 0.885332226753=======
+===========================epoch 80====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.366674661636 0.062655583024 and 0.939898133278======
+the average acc among 40 class is:0.865215116279
+===========average loss and acc for this epoch is 0.369885206223 and 0.891815245152=======
+===========================epoch 81====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.352299034595 0.0626343935728 and 0.943300902843======
+the average acc among 40 class is:0.858296511628
+===========average loss and acc for this epoch is 0.368347018957 and 0.890599668026=======
+===========================epoch 82====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.361683905125 0.0626150816679 and 0.942438781261======
+the average acc among 40 class is:0.866005813953
+===========average loss and acc for this epoch is 0.368902087212 and 0.891410052776=======
+===========================epoch 83====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.355578035116 0.0625986531377 and 0.941097617149======
+the average acc among 40 class is:0.867215116279
+===========average loss and acc for this epoch is 0.370041012764 and 0.891410052776=======
+===========================epoch 84====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.352421104908 0.0625812709332 and 0.945181846619======
+the average acc among 40 class is:0.872755813953
+===========average loss and acc for this epoch is 0.368467360735 and 0.895461916924=======
+===========================epoch 85====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.353492051363 0.0625636726618 and 0.942173838615======
+the average acc among 40 class is:0.868296511628
+===========average loss and acc for this epoch is 0.367634654045 and 0.893435955048=======
+===========================epoch 86====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.339681684971 0.0625540614128 and 0.945964694023======
+the average acc among 40 class is:0.866796511628
+===========average loss and acc for this epoch is 0.366822659969 and 0.893435955048=======
+===========================epoch 87====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.346842706203 0.0625406056643 and 0.944790542126======
+the average acc among 40 class is:0.866174418605
+===========average loss and acc for this epoch is 0.373451709747 and 0.892220437527=======
+===========================epoch 88====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.345742255449 0.0625310689211 and 0.943329632282======
+the average acc among 40 class is:0.865255813953
+===========average loss and acc for this epoch is 0.370111018419 and 0.893030822277=======
+===========================epoch 89====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.349930435419 0.0625144690275 and 0.942953407764======
+the average acc among 40 class is:0.866924418605
+===========average loss and acc for this epoch is 0.370797872543 and 0.892625629902=======
+===========================epoch 90====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.342555701733 0.0624986514449 and 0.943616271019======
+the average acc among 40 class is:0.866337209302
+===========average loss and acc for this epoch is 0.368901818991 and 0.892625629902=======
+===========================epoch 91====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.348984181881 0.0624869093299 and 0.942587256432======
+the average acc among 40 class is:0.863877906977
+===========average loss and acc for this epoch is 0.366050720215 and 0.895056724548=======
+===========================epoch 92====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.331806123257 0.0624756217003 and 0.94793176651======
+the average acc among 40 class is:0.866505813953
+===========average loss and acc for this epoch is 0.366851747036 and 0.893841147423=======
+===========================epoch 93====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.340697586536 0.0624638572335 and 0.947413802147======
+the average acc among 40 class is:0.868587209302
+===========average loss and acc for this epoch is 0.369789779186 and 0.894246339798=======
+===========================epoch 94====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.341751515865 0.0624471083283 and 0.947233378887======
+the average acc among 40 class is:0.866796511628
+===========average loss and acc for this epoch is 0.366405308247 and 0.893841147423=======
+===========================epoch 95====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.353219687939 0.0624342449009 and 0.942022144794======
+the average acc among 40 class is:0.86338372093
+===========average loss and acc for this epoch is 0.367302805185 and 0.891410052776=======
+===========================epoch 96====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.345130056143 0.0624270215631 and 0.944866478443======
+the average acc among 40 class is:0.862546511628
+===========average loss and acc for this epoch is 0.371763944626 and 0.891815245152=======
+===========================epoch 97====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.34683662653 0.0624151229858 and 0.944714546204======
+the average acc among 40 class is:0.864465116279
+===========average loss and acc for this epoch is 0.368346333504 and 0.892220437527=======
+===========================epoch 98====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.350810468197 0.0624096505344 and 0.945134758949======
+the average acc among 40 class is:0.856755813953
+===========average loss and acc for this epoch is 0.370083063841 and 0.889789283276=======
+===========================epoch 99====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.339999586344 0.062393464148 and 0.949345469475======
+the average acc among 40 class is:0.868965116279
+===========average loss and acc for this epoch is 0.37004300952 and 0.894651532173=======
+===========================epoch 100====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.32113802433 0.0623835511506 and 0.949149787426======
+the average acc among 40 class is:0.863715116279
+===========average loss and acc for this epoch is 0.367705911398 and 0.893841147423=======
+===========================epoch 101====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.335318207741 0.0623743459582 and 0.947499930859======
+the average acc among 40 class is:0.858424418605
+===========average loss and acc for this epoch is 0.370554357767 and 0.8893840909=======
+===========================epoch 102====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.339789837599 0.062364410609 and 0.946924567223======
+the average acc among 40 class is:0.859005813953
+===========average loss and acc for this epoch is 0.369754374027 and 0.890599668026=======
+===========================epoch 103====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.329403817654 0.0623576752841 and 0.948964238167======
+the average acc among 40 class is:0.859215116279
+===========average loss and acc for this epoch is 0.369188219309 and 0.891815245152=======
+===========================epoch 104====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.339503854513 0.0623509474099 and 0.946545004845======
+the average acc among 40 class is:0.864505813953
+===========average loss and acc for this epoch is 0.366306751966 and 0.892220437527=======
+===========================epoch 105====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.321152061224 0.0623412914574 and 0.950526416302======
+the average acc among 40 class is:0.867215116279
+===========average loss and acc for this epoch is 0.366021484137 and 0.894246339798=======
+===========================epoch 106====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.330412685871 0.0623336806893 and 0.947268784046======
+the average acc among 40 class is:0.866546511628
+===========average loss and acc for this epoch is 0.365621268749 and 0.895461916924=======
+===========================epoch 107====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.325841367245 0.0623253881931 and 0.950497746468======
+the average acc among 40 class is:0.865796511628
+===========average loss and acc for this epoch is 0.369907557964 and 0.892625629902=======
+===========================epoch 108====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.325813919306 0.0623168759048 and 0.948672413826======
+the average acc among 40 class is:0.859924418605
+===========average loss and acc for this epoch is 0.372907847166 and 0.890194475651=======
+===========================epoch 109====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.32600659132 0.0623113997281 and 0.950232863426======
+the average acc among 40 class is:0.858715116279
+===========average loss and acc for this epoch is 0.372274339199 and 0.889789283276=======
+===========================epoch 110====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.332165539265 0.0623025372624 and 0.948475003242======
+the average acc among 40 class is:0.860674418605
+===========average loss and acc for this epoch is 0.37334048748 and 0.8893840909=======
+===========================epoch 111====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.325677335262 0.0622963681817 and 0.94761288166======
+the average acc among 40 class is:0.860005813953
+===========average loss and acc for this epoch is 0.372830182314 and 0.889789283276=======
+===========================epoch 112====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.319948107004 0.0622896365821 and 0.950917720795======
+the average acc among 40 class is:0.86388372093
+===========average loss and acc for this epoch is 0.372019648552 and 0.891410052776=======
+===========================epoch 113====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.331204563379 0.0622836761177 and 0.947511672974======
+the average acc among 40 class is:0.859424418605
+===========average loss and acc for this epoch is 0.373084753752 and 0.88897895813=======
+===========================epoch 114====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.328638583422 0.0622775554657 and 0.947363257408======
+the average acc among 40 class is:0.863255813953
+===========average loss and acc for this epoch is 0.373778015375 and 0.890194475651=======
+===========================epoch 115====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.321867287159 0.0622714348137 and 0.949099183083======
+the average acc among 40 class is:0.864174418605
+===========average loss and acc for this epoch is 0.372374236584 and 0.892625629902=======
+===========================epoch 116====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.327556908131 0.0622657164931 and 0.948351860046======
+the average acc among 40 class is:0.863546511628
+===========average loss and acc for this epoch is 0.37192851305 and 0.893030822277=======
+===========================epoch 117====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.324170947075 0.0622604712844 and 0.948827564716======
+the average acc among 40 class is:0.861796511628
+===========average loss and acc for this epoch is 0.371338844299 and 0.891410052776=======
+===========================epoch 118====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.327379137278 0.0622533336282 and 0.94763147831======
+the average acc among 40 class is:0.863587209302
+===========average loss and acc for this epoch is 0.369633883238 and 0.893841147423=======
+===========================epoch 119====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.326393902302 0.0622434392571 and 0.947855830193======
+the average acc among 40 class is:0.863587209302
+===========average loss and acc for this epoch is 0.368465185165 and 0.892220437527=======
+===========================epoch 120====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.329355239868 0.0622337050736 and 0.948051571846======
+the average acc among 40 class is:0.864337209302
+===========average loss and acc for this epoch is 0.369634211063 and 0.891410052776=======
+===========================epoch 121====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.312568157911 0.0622301585972 and 0.950367808342======
+the average acc among 40 class is:0.864337209302
+===========average loss and acc for this epoch is 0.368599772453 and 0.893435955048=======
+===========================epoch 122====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.313163340092 0.0622261762619 and 0.951160728931======
+the average acc among 40 class is:0.859587209302
+===========average loss and acc for this epoch is 0.369016826153 and 0.890599668026=======
+===========================epoch 123====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.312266200781 0.0622217766941 and 0.952685832977======
+the average acc among 40 class is:0.861546511628
+===========average loss and acc for this epoch is 0.3694421947 and 0.892220437527=======
+===========================epoch 124====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.332854270935 0.0622172243893 and 0.948178112507======
+the average acc among 40 class is:0.859755813953
+===========average loss and acc for this epoch is 0.372559159994 and 0.890599668026=======
+===========================epoch 125====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.322686284781 0.0622139759362 and 0.949213981628======
+the average acc among 40 class is:0.861215116279
+===========average loss and acc for this epoch is 0.371664345264 and 0.891410052776=======
+===========================epoch 126====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.311352789402 0.0622101649642 and 0.952729582787======
+the average acc among 40 class is:0.858674418605
+===========average loss and acc for this epoch is 0.370532989502 and 0.891004860401=======
+===========================epoch 127====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.318565309048 0.0622048191726 and 0.947982430458======
+the average acc among 40 class is:0.860005813953
+===========average loss and acc for this epoch is 0.370445668697 and 0.891410052776=======
+===========================epoch 128====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.31808501482 0.0622004047036 and 0.950059115887======
+the average acc among 40 class is:0.862255813953
+===========average loss and acc for this epoch is 0.370472073555 and 0.891815245152=======
+===========================epoch 129====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.318590044975 0.0621968619525 and 0.949080586433======
+the average acc among 40 class is:0.860127906977
+===========average loss and acc for this epoch is 0.372253537178 and 0.891410052776=======
+===========================epoch 130====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.316809743643 0.0621923729777 and 0.952164471149======
+the average acc among 40 class is:0.863877906977
+===========average loss and acc for this epoch is 0.372405380011 and 0.892625629902=======
+===========================epoch 131====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.318801224232 0.062188308686 and 0.949134647846======
+the average acc among 40 class is:0.861005813953
+===========average loss and acc for this epoch is 0.372511297464 and 0.891004860401=======
+===========================epoch 132====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.315852791071 0.0621860139072 and 0.951069653034======
+the average acc among 40 class is:0.863796511628
+===========average loss and acc for this epoch is 0.371854692698 and 0.893030822277=======
+===========================epoch 133====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.317010253668 0.062181878835 and 0.950700163841======
+the average acc among 40 class is:0.865337209302
+===========average loss and acc for this epoch is 0.369774729013 and 0.893435955048=======
+===========================epoch 134====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.317305117846 0.0621773116291 and 0.949414610863======
+the average acc among 40 class is:0.863796511628
+===========average loss and acc for this epoch is 0.372953385115 and 0.890599668026=======
+===========================epoch 135====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.313193917274 0.0621726997197 and 0.949787437916======
+the average acc among 40 class is:0.858546511628
+===========average loss and acc for this epoch is 0.371625840664 and 0.891815245152=======
+===========================epoch 136====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.311078965664 0.0621703155339 and 0.952501893044======
+the average acc among 40 class is:0.862796511628
+===========average loss and acc for this epoch is 0.371542304754 and 0.892220437527=======
+===========================epoch 137====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.318267017603 0.0621653199196 and 0.949196994305======
+the average acc among 40 class is:0.860796511628
+===========average loss and acc for this epoch is 0.372231155634 and 0.891410052776=======
+===========================epoch 138====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.31055393815 0.0621618404984 and 0.952319741249======
+the average acc among 40 class is:0.858918604651
+===========average loss and acc for this epoch is 0.371520340443 and 0.891410052776=======
+===========================epoch 139====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.314764559269 0.0621599070728 and 0.949418067932======
+the average acc among 40 class is:0.863796511628
+===========average loss and acc for this epoch is 0.370798945427 and 0.893030822277=======
+===========================epoch 140====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.31471902132 0.0621575042605 and 0.949888706207======
+the average acc among 40 class is:0.861837209302
+===========average loss and acc for this epoch is 0.372935175896 and 0.892220437527=======
+===========================epoch 141====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.319594323635 0.0621529407799 and 0.951950252056======
+the average acc among 40 class is:0.862127906977
+===========average loss and acc for this epoch is 0.373396754265 and 0.891815245152=======
+===========================epoch 142====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.317216217518 0.0621478483081 and 0.94981276989======
+the average acc among 40 class is:0.859377906977
+===========average loss and acc for this epoch is 0.371528238058 and 0.891815245152=======
+===========================epoch 143====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.322747260332 0.0621440783143 and 0.948910236359======
+the average acc among 40 class is:0.862296511628
+===========average loss and acc for this epoch is 0.37200409174 and 0.891410052776=======
+===========================epoch 144====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.313152849674 0.0621387660503 and 0.952537357807======
+the average acc among 40 class is:0.861837209302
+===========average loss and acc for this epoch is 0.369281500578 and 0.892625629902=======
+===========================epoch 145====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.320064991713 0.0621348619461 and 0.950512886047======
+the average acc among 40 class is:0.862837209302
+===========average loss and acc for this epoch is 0.371628552675 and 0.892625629902=======
+===========================epoch 146====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.312333166599 0.0621299520135 and 0.952145934105======
+the average acc among 40 class is:0.861796511628
+===========average loss and acc for this epoch is 0.371595710516 and 0.892220437527=======
+===========================epoch 147====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.313312709332 0.0621247664094 and 0.950182259083======
+the average acc among 40 class is:0.863046511628
+===========average loss and acc for this epoch is 0.371871143579 and 0.892625629902=======
+===========================epoch 148====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.312637209892 0.0621216595173 and 0.949453473091======
+the average acc among 40 class is:0.863255813953
+===========average loss and acc for this epoch is 0.370557427406 and 0.891410052776=======
+===========================epoch 149====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.31244456768 0.0621172487736 and 0.950961709023======
+the average acc among 40 class is:0.861674418605
+===========average loss and acc for this epoch is 0.370858460665 and 0.891004860401=======
+===========================epoch 150====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.309644013643 0.0621139518917 and 0.952508628368======
+the average acc among 40 class is:0.864587209302
+===========average loss and acc for this epoch is 0.370885878801 and 0.893841147423=======
+===========================epoch 151====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.308752685785 0.0621083751321 and 0.950315594673======
+the average acc among 40 class is:0.860587209302
+===========average loss and acc for this epoch is 0.371665805578 and 0.891410052776=======
+===========================epoch 152====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.317496776581 0.0621048212051 and 0.951084792614======
+the average acc among 40 class is:0.861465116279
+===========average loss and acc for this epoch is 0.370515137911 and 0.892220437527=======
+===========================epoch 153====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.305073589087 0.0621002092957 and 0.95153015852======
+the average acc among 40 class is:0.864465116279
+===========average loss and acc for this epoch is 0.371696323156 and 0.893435955048=======
+===========================epoch 154====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.306996911764 0.0620953664184 and 0.952265739441======
+the average acc among 40 class is:0.860046511628
+===========average loss and acc for this epoch is 0.370638608932 and 0.891815245152=======
+===========================epoch 155====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.305933982134 0.0620916485786 and 0.952947258949======
+the average acc among 40 class is:0.861715116279
+===========average loss and acc for this epoch is 0.371152967215 and 0.892625629902=======
+===========================epoch 156====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.306724309921 0.0620880499482 and 0.949733555317======
+the average acc among 40 class is:0.861674418605
+===========average loss and acc for this epoch is 0.37110504508 and 0.892625629902=======
+===========================epoch 157====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.317921042442 0.0620833337307 and 0.949396133423======
+the average acc among 40 class is:0.855796511628
+===========average loss and acc for this epoch is 0.371948033571 and 0.891004860401=======
+===========================epoch 158====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.312290996313 0.0620805211365 and 0.95074403286======
+the average acc among 40 class is:0.857965116279
+===========average loss and acc for this epoch is 0.372601479292 and 0.891410052776=======
+===========================epoch 159====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.312023699284 0.0620776489377 and 0.951486289501======
+the average acc among 40 class is:0.858296511628
+===========average loss and acc for this epoch is 0.371270269156 and 0.891815245152=======
+===========================epoch 160====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.308943450451 0.0620735473931 and 0.952802300453======
+the average acc among 40 class is:0.857215116279
+===========average loss and acc for this epoch is 0.370887815952 and 0.890599668026=======
+===========================epoch 161====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.31504547596 0.0620688199997 and 0.951700508595======
+the average acc among 40 class is:0.858715116279
+===========average loss and acc for this epoch is 0.371775716543 and 0.891004860401=======
+===========================epoch 162====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.297303557396 0.062064576894 and 0.954856991768======
+the average acc among 40 class is:0.858005813953
+===========average loss and acc for this epoch is 0.37317559123 and 0.891004860401=======
+===========================epoch 163====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.310897618532 0.0620591528714 and 0.952508628368======
+the average acc among 40 class is:0.858837209302
+===========average loss and acc for this epoch is 0.374716550112 and 0.891004860401=======
+===========================epoch 164====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.307144016027 0.062056042254 and 0.952518761158======
+the average acc among 40 class is:0.860255813953
+===========average loss and acc for this epoch is 0.37267151475 and 0.890599668026=======
+===========================epoch 165====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.305929988623 0.0620527938008 and 0.952113926411======
+the average acc among 40 class is:0.855046511628
+===========average loss and acc for this epoch is 0.373313993216 and 0.889789283276=======
+===========================epoch 166====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.301364988089 0.0620480775833 and 0.953142940998======
+the average acc among 40 class is:0.859796511628
+===========average loss and acc for this epoch is 0.373509347439 and 0.892220437527=======
+===========================epoch 167====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.318825989962 0.0620441734791 and 0.949547946453======
+the average acc among 40 class is:0.860587209302
+===========average loss and acc for this epoch is 0.373326987028 and 0.891004860401=======
+===========================epoch 168====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.31047257781 0.062041066587 and 0.950860381126======
+the average acc among 40 class is:0.859837209302
+===========average loss and acc for this epoch is 0.371304661036 and 0.891410052776=======
+===========================epoch 169====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.304377496243 0.0620381459594 and 0.954212546349======
+the average acc among 40 class is:0.859546511628
+===========average loss and acc for this epoch is 0.371755719185 and 0.891004860401=======
+===========================epoch 170====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.310331970453 0.0620342083275 and 0.949863433838======
+the average acc among 40 class is:0.861005813953
+===========average loss and acc for this epoch is 0.371188014746 and 0.891815245152=======
+===========================epoch 171====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.31747892499 0.0620312094688 and 0.950345873833======
+the average acc among 40 class is:0.854965116279
+===========average loss and acc for this epoch is 0.37151491642 and 0.889789283276=======
+===========================epoch 172====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.293093800545 0.0620276741683 and 0.955519974232======
+the average acc among 40 class is:0.860546511628
+===========average loss and acc for this epoch is 0.37255948782 and 0.892220437527=======
+===========================epoch 173====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298465102911 0.0620223991573 and 0.954042136669======
+the average acc among 40 class is:0.857965116279
+===========average loss and acc for this epoch is 0.37167724967 and 0.891410052776=======
+===========================epoch 174====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.315712600946 0.0620188713074 and 0.950917840004======
+the average acc among 40 class is:0.857546511628
+===========average loss and acc for this epoch is 0.370694994926 and 0.892220437527=======
+===========================epoch 175====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298697799444 0.0620144680142 and 0.954559981823======
+the average acc among 40 class is:0.858005813953
+===========average loss and acc for this epoch is 0.373049139977 and 0.891004860401=======
+===========================epoch 176====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.301811397076 0.0620107538998 and 0.952012717724======
+the average acc among 40 class is:0.856755813953
+===========average loss and acc for this epoch is 0.375407487154 and 0.889789283276=======
+===========================epoch 177====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.291367888451 0.0620064325631 and 0.955769717693======
+the average acc among 40 class is:0.860296511628
+===========average loss and acc for this epoch is 0.376172780991 and 0.892220437527=======
+===========================epoch 178====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.310258746147 0.0620043464005 and 0.95167863369======
+the average acc among 40 class is:0.856174418605
+===========average loss and acc for this epoch is 0.375106543303 and 0.890194475651=======
+===========================epoch 179====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.304245501757 0.0620004162192 and 0.952704310417======
+the average acc among 40 class is:0.859715116279
+===========average loss and acc for this epoch is 0.373762369156 and 0.891004860401=======
+===========================epoch 180====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.301235765219 0.0619940645993 and 0.952824115753======
+the average acc among 40 class is:0.863505813953
+===========average loss and acc for this epoch is 0.373836070299 and 0.893435955048=======
+===========================epoch 181====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.297647148371 0.0619893074036 and 0.954102873802======
+the average acc among 40 class is:0.863255813953
+===========average loss and acc for this epoch is 0.374553352594 and 0.893030822277=======
+===========================epoch 182====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298933982849 0.0619845874608 and 0.953461766243======
+the average acc among 40 class is:0.864505813953
+===========average loss and acc for this epoch is 0.374373137951 and 0.892220437527=======
+===========================epoch 183====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.30431842804 0.0619811043143 and 0.953288078308======
+the average acc among 40 class is:0.860715116279
+===========average loss and acc for this epoch is 0.374070078135 and 0.891410052776=======
+===========================epoch 184====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.311894565821 0.0619787983596 and 0.952316403389======
+the average acc among 40 class is:0.859965116279
+===========average loss and acc for this epoch is 0.373742550611 and 0.891410052776=======
+===========================epoch 185====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.295428276062 0.0619765035808 and 0.95382463932======
+the average acc among 40 class is:0.861715116279
+===========average loss and acc for this epoch is 0.372431099415 and 0.892625629902=======
+===========================epoch 186====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.311415493488 0.0619732365012 and 0.951101660728======
+the average acc among 40 class is:0.861005813953
+===========average loss and acc for this epoch is 0.371228814125 and 0.891815245152=======
+===========================epoch 187====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.308760613203 0.0619705542922 and 0.951422214508======
+the average acc among 40 class is:0.858546511628
+===========average loss and acc for this epoch is 0.37095066905 and 0.891815245152=======
+===========================epoch 188====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.316020965576 0.0619667358696 and 0.948913693428======
+the average acc among 40 class is:0.859755813953
+===========average loss and acc for this epoch is 0.369820088148 and 0.892220437527=======
+===========================epoch 189====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.308740794659 0.0619635805488 and 0.95229101181======
+the average acc among 40 class is:0.860796511628
+===========average loss and acc for this epoch is 0.371271550655 and 0.892625629902=======
+===========================epoch 190====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.302522748709 0.0619599819183 and 0.954140007496======
+the average acc among 40 class is:0.860215116279
+===========average loss and acc for this epoch is 0.373383939266 and 0.891815245152=======
+===========================epoch 191====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.310473740101 0.0619550347328 and 0.952928721905======
+the average acc among 40 class is:0.859505813953
+===========average loss and acc for this epoch is 0.374166488647 and 0.891815245152=======
+===========================epoch 192====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298637807369 0.06195146963 and 0.953404426575======
+the average acc among 40 class is:0.860337209302
+===========average loss and acc for this epoch is 0.373202741146 and 0.893030822277=======
+===========================epoch 193====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.306901872158 0.0619484595954 and 0.950794577599======
+the average acc among 40 class is:0.861005813953
+===========average loss and acc for this epoch is 0.371448487043 and 0.893030822277=======
+===========================epoch 194====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.301792263985 0.0619454905391 and 0.95243948698======
+the average acc among 40 class is:0.857255813953
+===========average loss and acc for this epoch is 0.370501637459 and 0.891815245152=======
+===========================epoch 195====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.303438991308 0.061941832304 and 0.951751112938======
+the average acc among 40 class is:0.859755813953
+===========average loss and acc for this epoch is 0.369642704725 and 0.892625629902=======
+===========================epoch 196====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.294983237982 0.061936981976 and 0.953755378723======
+the average acc among 40 class is:0.862174418605
+===========average loss and acc for this epoch is 0.369242757559 and 0.893030822277=======
+===========================epoch 197====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.299179702997 0.0619325526059 and 0.952660441399======
+the average acc among 40 class is:0.861715116279
+===========average loss and acc for this epoch is 0.369051963091 and 0.893030822277=======
+===========================epoch 198====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.312589794397 0.0619290545583 and 0.951653301716======
+the average acc among 40 class is:0.861046511628
+===========average loss and acc for this epoch is 0.369413852692 and 0.893435955048=======
+===========================epoch 199====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.293850004673 0.0619251132011 and 0.956845939159======
+the average acc among 40 class is:0.860005813953
+===========average loss and acc for this epoch is 0.370255321264 and 0.892625629902=======
+===========================epoch 200====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.302595853806 0.0619225017726 and 0.954273223877======
+the average acc among 40 class is:0.863005813953
+===========average loss and acc for this epoch is 0.369281798601 and 0.894246339798=======
+===========================epoch 201====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.300703972578 0.0619193911552 and 0.952454686165======
+the average acc among 40 class is:0.860796511628
+===========average loss and acc for this epoch is 0.370059043169 and 0.892625629902=======
+===========================epoch 202====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.305522084236 0.0619179792702 and 0.9513412714======
+the average acc among 40 class is:0.863755813953
+===========average loss and acc for this epoch is 0.370597809553 and 0.893841147423=======
+===========================epoch 203====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.306477695704 0.061914332211 and 0.952606499195======
+the average acc among 40 class is:0.860877906977
+===========average loss and acc for this epoch is 0.372508138418 and 0.893030822277=======
+===========================epoch 204====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.304994910955 0.061910290271 and 0.953758716583======
+the average acc among 40 class is:0.858465116279
+===========average loss and acc for this epoch is 0.373191535473 and 0.890599668026=======
+===========================epoch 205====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.307198137045 0.0619088113308 and 0.952230274677======
+the average acc among 40 class is:0.859377906977
+===========average loss and acc for this epoch is 0.373346567154 and 0.892220437527=======
+===========================epoch 206====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.3010674119 0.0619056001306 and 0.955125212669======
+the average acc among 40 class is:0.855215116279
+===========average loss and acc for this epoch is 0.374626129866 and 0.890599668026=======
+===========================epoch 207====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298954099417 0.0619011111557 and 0.95416867733======
+the average acc among 40 class is:0.855337209302
+===========average loss and acc for this epoch is 0.375029832125 and 0.890599668026=======
+===========================epoch 208====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.29447633028 0.0618977844715 and 0.953919053078======
+the average acc among 40 class is:0.858796511628
+===========average loss and acc for this epoch is 0.377754509449 and 0.891410052776=======
+===========================epoch 209====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.303831398487 0.0618951395154 and 0.950558483601======
+the average acc among 40 class is:0.854343023256
+===========average loss and acc for this epoch is 0.375725597143 and 0.887763381004=======
+===========================epoch 210====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.304270207882 0.0618917346001 and 0.951005578041======
+the average acc among 40 class is:0.856005813953
+===========average loss and acc for this epoch is 0.375998586416 and 0.890194475651=======
+===========================epoch 211====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.301518261433 0.0618899166584 and 0.953660845757======
+the average acc among 40 class is:0.858593023256
+===========average loss and acc for this epoch is 0.37477633357 and 0.889789283276=======
+===========================epoch 212====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.291387110949 0.0618873536587 and 0.955741047859======
+the average acc among 40 class is:0.862215116279
+===========average loss and acc for this epoch is 0.373837560415 and 0.892220437527=======
+===========================epoch 213====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.306333839893 0.0618829019368 and 0.95291519165======
+the average acc among 40 class is:0.860005813953
+===========average loss and acc for this epoch is 0.37308371067 and 0.891815245152=======
+===========================epoch 214====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.302201986313 0.0618803985417 and 0.952991127968======
+the average acc among 40 class is:0.853465116279
+===========average loss and acc for this epoch is 0.373526185751 and 0.8893840909=======
+===========================epoch 215====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.296190500259 0.061875808984 and 0.952161133289======
+the average acc among 40 class is:0.858715116279
+===========average loss and acc for this epoch is 0.37244400382 and 0.891410052776=======
+===========================epoch 216====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.300229638815 0.0618715584278 and 0.95246475935======
+the average acc among 40 class is:0.857674418605
+===========average loss and acc for this epoch is 0.374226868153 and 0.891004860401=======
+===========================epoch 217====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.305556863546 0.0618680045009 and 0.953102469444======
+the average acc among 40 class is:0.859005813953
+===========average loss and acc for this epoch is 0.372832030058 and 0.891815245152=======
+===========================epoch 218====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.295238733292 0.0618669688702 and 0.951801776886======
+the average acc among 40 class is:0.861546511628
+===========average loss and acc for this epoch is 0.37268742919 and 0.892625629902=======
+===========================epoch 219====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.301024258137 0.0618652813137 and 0.953755259514======
+the average acc among 40 class is:0.85888372093
+===========average loss and acc for this epoch is 0.374912887812 and 0.890194475651=======
+===========================epoch 220====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.304333150387 0.0618601553142 and 0.951138794422======
+the average acc among 40 class is:0.85913372093
+===========average loss and acc for this epoch is 0.375672727823 and 0.890599668026=======
+===========================epoch 221====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.309830486774 0.0618563294411 and 0.95040667057======
+the average acc among 40 class is:0.860674418605
+===========average loss and acc for this epoch is 0.376518279314 and 0.891004860401=======
+===========================epoch 222====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.295359224081 0.0618549995124 and 0.953121006489======
+the average acc among 40 class is:0.859715116279
+===========average loss and acc for this epoch is 0.374807596207 and 0.891410052776=======
+===========================epoch 223====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.295359760523 0.0618518814445 and 0.954200744629======
+the average acc among 40 class is:0.861965116279
+===========average loss and acc for this epoch is 0.374156296253 and 0.891815245152=======
+===========================epoch 224====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298667937517 0.0618488267064 and 0.95261323452======
+the average acc among 40 class is:0.857755813953
+===========average loss and acc for this epoch is 0.373308092356 and 0.891410052776=======
+===========================epoch 225====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298728466034 0.0618469119072 and 0.954320549965======
+the average acc among 40 class is:0.858755813953
+===========average loss and acc for this epoch is 0.374611288309 and 0.891410052776=======
+===========================epoch 226====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.28995731473 0.0618435144424 and 0.956410706043======
+the average acc among 40 class is:0.860505813953
+===========average loss and acc for this epoch is 0.373510241508 and 0.892625629902=======
+===========================epoch 227====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.308775901794 0.0618403069675 and 0.950809836388======
+the average acc among 40 class is:0.859215116279
+===========average loss and acc for this epoch is 0.374427080154 and 0.891004860401=======
+===========================epoch 228====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.301566064358 0.0618358030915 and 0.953660845757======
+the average acc among 40 class is:0.860674418605
+===========average loss and acc for this epoch is 0.3724206388 and 0.891410052776=======
+===========================epoch 229====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298188209534 0.0618302449584 and 0.954052269459======
+the average acc among 40 class is:0.860174418605
+===========average loss and acc for this epoch is 0.371684581041 and 0.891004860401=======
+===========================epoch 230====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.289020121098 0.0618265382946 and 0.955219626427======
+the average acc among 40 class is:0.859755813953
+===========average loss and acc for this epoch is 0.372931450605 and 0.891815245152=======
+===========================epoch 231====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.289327889681 0.0618242099881 and 0.954592108727======
+the average acc among 40 class is:0.859174418605
+===========average loss and acc for this epoch is 0.374114185572 and 0.891004860401=======
+===========================epoch 232====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298031270504 0.0618204586208 and 0.953740119934======
+the average acc among 40 class is:0.861215116279
+===========average loss and acc for this epoch is 0.371743261814 and 0.892220437527=======
+===========================epoch 233====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.290065675974 0.061818100512 and 0.956059753895======
+the average acc among 40 class is:0.857924418605
+===========average loss and acc for this epoch is 0.375280410051 and 0.88897895813=======
+===========================epoch 234====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.300985991955 0.061815906316 and 0.954030334949======
+the average acc among 40 class is:0.85788372093
+===========average loss and acc for this epoch is 0.37470471859 and 0.890194475651=======
+===========================epoch 235====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.295652925968 0.0618124492466 and 0.95417201519======
+the average acc among 40 class is:0.859843023256
+===========average loss and acc for this epoch is 0.374353021383 and 0.891410052776=======
+===========================epoch 236====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.292453289032 0.0618083663285 and 0.953193545341======
+the average acc among 40 class is:0.85663372093
+===========average loss and acc for this epoch is 0.373984009027 and 0.891004860401=======
+===========================epoch 237====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.297441780567 0.0618040375412 and 0.955175757408======
+the average acc among 40 class is:0.859255813953
+===========average loss and acc for this epoch is 0.375082999468 and 0.891815245152=======
+===========================epoch 238====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.302230447531 0.0618007555604 and 0.95432728529======
+the average acc among 40 class is:0.855593023256
+===========average loss and acc for this epoch is 0.376478582621 and 0.88897895813=======
+===========================epoch 239====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.298520624638 0.0617963150144 and 0.953951060772======
+the average acc among 40 class is:0.862755813953
+===========average loss and acc for this epoch is 0.373982816935 and 0.892625629902=======
+===========================epoch 240====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.294298350811 0.0617926008999 and 0.957357108593======
+the average acc among 40 class is:0.85888372093
+===========average loss and acc for this epoch is 0.374143779278 and 0.889789283276=======
+===========================epoch 241====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.297734856606 0.0617890581489 and 0.952678978443======
+the average acc among 40 class is:0.856924418605
+===========average loss and acc for this epoch is 0.373905211687 and 0.890194475651=======
+===========================epoch 242====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.300367504358 0.061786480248 and 0.953729987144======
+the average acc among 40 class is:0.863715116279
+===========average loss and acc for this epoch is 0.373601675034 and 0.892625629902=======
+===========================epoch 243====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.302040278912 0.0617822520435 and 0.954570174217======
+the average acc among 40 class is:0.858505813953
+===========average loss and acc for this epoch is 0.373371303082 and 0.891004860401=======
+===========================epoch 244====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.295048236847 0.0617786347866 and 0.954349219799======
+the average acc among 40 class is:0.860465116279
+===========average loss and acc for this epoch is 0.373593956232 and 0.891004860401=======
+===========================epoch 245====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.28859692812 0.0617750510573 and 0.955816924572======
+the average acc among 40 class is:0.85788372093
+===========average loss and acc for this epoch is 0.374269455671 and 0.890194475651=======
+===========================epoch 246====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.285048365593 0.0617706775665 and 0.955823600292======
+the average acc among 40 class is:0.859715116279
+===========average loss and acc for this epoch is 0.373684078455 and 0.891410052776=======
+===========================epoch 247====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.289589703083 0.0617664456367 and 0.957208633423======
+the average acc among 40 class is:0.861215116279
+===========average loss and acc for this epoch is 0.374777942896 and 0.892220437527=======
+===========================epoch 248====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.288822591305 0.0617642998695 and 0.956230342388======
+the average acc among 40 class is:0.858674418605
+===========average loss and acc for this epoch is 0.374989598989 and 0.889789283276=======
+===========================epoch 249====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.284877151251 0.0617622733116 and 0.954958260059======
+the average acc among 40 class is:0.857424418605
+===========average loss and acc for this epoch is 0.373327970505 and 0.8893840909=======
+===========================epoch 250====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.285689771175 0.0617587044835 and 0.954602241516======
+the average acc among 40 class is:0.857965116279
+===========average loss and acc for this epoch is 0.371632397175 and 0.891410052776=======
+===========================epoch 251====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.295272439718 0.0617551021278 and 0.952392280102======
+the average acc among 40 class is:0.861674418605
+===========average loss and acc for this epoch is 0.374145448208 and 0.891410052776=======
+===========================epoch 252====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.289970964193 0.0617540366948 and 0.954371273518======
+the average acc among 40 class is:0.859424418605
+===========average loss and acc for this epoch is 0.375418573618 and 0.890599668026=======
+===========================epoch 253====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.277909368277 0.0617506727576 and 0.958910942078======
+the average acc among 40 class is:0.861755813953
+===========average loss and acc for this epoch is 0.373644948006 and 0.893030822277=======
+===========================epoch 254====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.290213823318 0.0617454573512 and 0.955450892448======
+the average acc among 40 class is:0.864715116279
+===========average loss and acc for this epoch is 0.375558912754 and 0.893030822277=======
+===========================epoch 255====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.29991966486 0.0617435649037 and 0.955074608326======
+the average acc among 40 class is:0.860174418605
+===========average loss and acc for this epoch is 0.376927495003 and 0.890599668026=======
+===========================epoch 256====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.293052256107 0.061740912497 and 0.954052269459======
+the average acc among 40 class is:0.860424418605
+===========average loss and acc for this epoch is 0.377454131842 and 0.891004860401=======
+===========================epoch 257====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.297423511744 0.0617379136384 and 0.954629302025======
+the average acc among 40 class is:0.859465116279
+===========average loss and acc for this epoch is 0.378211379051 and 0.891004860401=======
+===========================epoch 258====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.293500632048 0.0617367513478 and 0.95667219162======
+the average acc among 40 class is:0.85713372093
+===========average loss and acc for this epoch is 0.379106014967 and 0.890194475651=======
+===========================epoch 259====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.300096064806 0.0617346391082 and 0.951106727123======
+the average acc among 40 class is:0.858215116279
+===========average loss and acc for this epoch is 0.377341836691 and 0.890194475651=======
+The running time for this trail is 34.0691571595 hours

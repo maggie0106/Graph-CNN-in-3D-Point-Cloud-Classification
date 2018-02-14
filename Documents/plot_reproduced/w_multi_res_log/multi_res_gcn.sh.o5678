@@ -1,0 +1,1318 @@
+[01;32m 
+       _ _                                                     _ _ _
+  __ _(_) |__  ___  ___  _ __    ___ ___   _ __ ___   ___ __ _(_) | |  ___ __ _
+ / _` | | '_ \/ __|/ _ \| '_ \  / __/ __| | '_ ` _ \ / __/ _` | | | | / __/ _` |
+| (_| | | |_) \__ \ (_) | | | || (__\__ \_| | | | | | (_| (_| | | | || (_| (_| |
+ \__, |_|_.__/|___/\___/|_| |_(_)___|___(_)_| |_| |_|\___\__, |_|_|_(_)___\__,_|
+ |___/                                                   |___/
+ [0m
+  Last Login....: Thu Feb 8 06:32:10 from 222.131.127.47
+  Uptime........: 12 days 15 hours 44 minutes 31 seconds
+  Load..........: 6.59 (1minute) -- 7.09 (5minutes) -- 12.28 (15minutes)
+  Memory MB.....: Total: 775366 -- Used: 762021 -- Free: 13344 -- Free Cached: 707863 -- Swap In Use: 332
+  Temperature...: Avg CPU Temp: 44.125 C -- Disk /dev/sda: 8 C -- Disk /dev/sdb: 7 C
+  Disk Usage....: You're using 108350MB in /home/yingxue.zhang2
+  SSH Logins....: There are currently 2 users logged in.
+  Processes.....: 1612 total running of which 12 are yours
+  Weather.......:   
+
+[01;32m  ::::::::::::::::::::::::::::::::::-RULES-::::::::::::::::::::::::::::::::::
+    This is a private system that you are not to give out access to anyone
+    without permission from the admin. No illegal files or activity.
+[0m
+
+2018-02-08 07:04:49.020403: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-08 07:04:49.020495: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-08 07:04:49.020502: W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+2018-02-08 07:04:49.380925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+name: Tesla K40m
+major: 3 minor: 5 memoryClockRate (GHz) 0.745
+pciBusID 0000:09:00.0
+Total memory: 11.17GiB
+Free memory: 11.09GiB
+2018-02-08 07:04:49.381035: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
+2018-02-08 07:04:49.381044: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
+2018-02-08 07:04:49.381067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: Tesla K40m, pci bus id: 0000:09:00.0)
+Hyper-parameter:
+The point number and the nearest neighbor number is 1024 and 40
+The first and second layer filter number is 1000 and 900
+The resolution for second layer is 55 and the point number in cluster is 52
+The fc neuron number is 300 and the output number is 40
+The Chebyshev polynomial order for each layer are 3 and 3
+The weighting scheme is weighted and the weighting scaler is 40
+Tensor("Max:0", shape=(?, 55, 1000), dtype=float32)
+Tensor("dropout_1/mul:0", shape=(?, 55, 900), dtype=float32)
+Tensor("Max_2:0", shape=(?, 900), dtype=float32)
+The global feature is Tensor("dropout_2/mul:0", shape=(?, 900), dtype=float32)
+The output of the first fc layer is Tensor("dropout_3/mul:0", shape=(?, 300), dtype=float32)
+The output of the second fc layer is Tensor("add_3:0", shape=(?, 40), dtype=float32)
+Total parameters number is 2993240
+Loading the graph data from trainData
+Finish loading batch_0
+Finish loading batch_1
+Finish loading batch_2
+Finish loading batch_3
+Finish loading batch_4
+Loading the graph data from testData
+Finish loading batch_0
+Finish loading batch_1
+===========================epoch 0====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 4.3709897995 0.0215942822397 and 0.351275414228======
+The forward inference time is 182.443709135 second
+the average acc among 40 class is:0.441994186047
+===========average loss and acc for this epoch is 1.88049948215 and 0.542139410973=======
+===========================epoch 1====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 2.7247633934 0.0227658711374 and 0.574532747269======
+The forward inference time is 157.463344097 second
+the average acc among 40 class is:0.555389534884
+===========average loss and acc for this epoch is 1.36375880241 and 0.644651532173=======
+===========================epoch 2====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 2.16507434845 0.0241676606238 and 0.658573508263======
+The forward inference time is 160.766830921 second
+the average acc among 40 class is:0.64348255814
+===========average loss and acc for this epoch is 1.15844511986 and 0.70340359211=======
+===========================epoch 3====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.90049576759 0.0253980960697 and 0.695843160152======
+The forward inference time is 160.708009958 second
+the average acc among 40 class is:0.708645348837
+===========average loss and acc for this epoch is 0.992372989655 and 0.76823335886=======
+===========================epoch 4====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.68326640129 0.0265437569469 and 0.725307106972======
+The forward inference time is 161.873840094 second
+the average acc among 40 class is:0.708186046512
+===========average loss and acc for this epoch is 0.884149551392 and 0.777147471905=======
+===========================epoch 5====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.53490650654 0.0276160631329 and 0.750649571419======
+The forward inference time is 154.668956041 second
+the average acc among 40 class is:0.723197674419
+===========average loss and acc for this epoch is 0.801267325878 and 0.789708256721=======
+===========================epoch 6====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.42269539833 0.0285805501044 and 0.768493235111======
+The forward inference time is 158.637729883 second
+the average acc among 40 class is:0.756145348837
+===========average loss and acc for this epoch is 0.752347826958 and 0.802674233913=======
+===========================epoch 7====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.33067917824 0.0295169167221 and 0.782335221767======
+The forward inference time is 155.12998414 second
+the average acc among 40 class is:0.771244186047
+===========average loss and acc for this epoch is 0.711761236191 and 0.815640211105=======
+===========================epoch 8====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.25805294514 0.0304304305464 and 0.792170524597======
+The forward inference time is 188.188878059 second
+the average acc among 40 class is:0.780145348837
+===========average loss and acc for this epoch is 0.679207742214 and 0.822528362274=======
+===========================epoch 9====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.21723818779 0.0312919691205 and 0.799628913403======
+The forward inference time is 199.045943022 second
+the average acc among 40 class is:0.768069767442
+===========average loss and acc for this epoch is 0.703403890133 and 0.813209056854=======
+===========================epoch 10====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.18593108654 0.0321376025677 and 0.804715275764======
+The forward inference time is 191.102894783 second
+the average acc among 40 class is:0.772279069767
+===========average loss and acc for this epoch is 0.639137148857 and 0.826175034046=======
+===========================epoch 11====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.12591195107 0.0329653546214 and 0.816205620766======
+The forward inference time is 193.734061956 second
+the average acc among 40 class is:0.790720930233
+===========average loss and acc for this epoch is 0.608471632004 and 0.834278762341=======
+===========================epoch 12====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.07659220695 0.0337081179023 and 0.822111904621======
+The forward inference time is 197.904632092 second
+the average acc among 40 class is:0.7965
+===========average loss and acc for this epoch is 0.626458823681 and 0.821717977524=======
+===========================epoch 13====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.05912172794 0.0344159007072 and 0.822051167488======
+The forward inference time is 193.256701946 second
+the average acc among 40 class is:0.80663372093
+===========average loss and acc for this epoch is 0.586309909821 and 0.836304724216=======
+===========================epoch 14====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.03380453587 0.0352516248822 and 0.824917435646======
+The forward inference time is 191.777776003 second
+the average acc among 40 class is:0.798029069767
+===========average loss and acc for this epoch is 0.54828363657 and 0.839546203613=======
+===========================epoch 15====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 1.00007510185 0.036047141999 and 0.829583644867======
+The forward inference time is 180.462914944 second
+the average acc among 40 class is:0.806563953488
+===========average loss and acc for this epoch is 0.548935234547 and 0.852917313576=======
+===========================epoch 16====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.985186934471 0.0367352329195 and 0.835142433643======
+The forward inference time is 173.486304045 second
+the average acc among 40 class is:0.811610465116
+===========average loss and acc for this epoch is 0.538283765316 and 0.855348467827=======
+===========================epoch 17====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.958274185658 0.0374614968896 and 0.838718891144======
+The forward inference time is 155.547435999 second
+the average acc among 40 class is:0.821360465116
+===========average loss and acc for this epoch is 0.533709287643 and 0.854538083076=======
+===========================epoch 18====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.941424548626 0.0381825827062 and 0.838288784027======
+The forward inference time is 184.880887032 second
+the average acc among 40 class is:0.830348837209
+===========average loss and acc for this epoch is 0.503368973732 and 0.862236618996=======
+===========================epoch 19====================
+0.0006
+=============average loss, l2 loss, acc  for this epoch is 0.918884575367 0.0389388352633 and 0.842521369457======
+The forward inference time is 156.280057907 second
+the average acc among 40 class is:0.807505813953
+===========average loss and acc for this epoch is 0.532401442528 and 0.850081026554=======
+===========================epoch 20====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.836012840271 0.0393611676991 and 0.858975052834======
+The forward inference time is 169.204828024 second
+the average acc among 40 class is:0.824558139535
+===========average loss and acc for this epoch is 0.485486209393 and 0.862236618996=======
+===========================epoch 21====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.791777253151 0.0394127480686 and 0.86626625061======
+The forward inference time is 171.451975107 second
+the average acc among 40 class is:0.827168604651
+===========average loss and acc for this epoch is 0.458524078131 and 0.86952996254=======
+===========================epoch 22====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.771356165409 0.0394672341645 and 0.870266258717======
+The forward inference time is 178.880492926 second
+the average acc among 40 class is:0.837843023256
+===========average loss and acc for this epoch is 0.467010945082 and 0.874392211437=======
+===========================epoch 23====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.770326852798 0.0395465418696 and 0.86624443531======
+The forward inference time is 182.282665014 second
+the average acc among 40 class is:0.828523255814
+===========average loss and acc for this epoch is 0.466408640146 and 0.866288483143=======
+===========================epoch 24====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.751145482063 0.0396509170532 and 0.872535347939======
+The forward inference time is 180.390192986 second
+the average acc among 40 class is:0.839761627907
+===========average loss and acc for this epoch is 0.465480566025 and 0.873987019062=======
+===========================epoch 25====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.734773814678 0.0397579669952 and 0.874335408211======
+The forward inference time is 156.07962203 second
+the average acc among 40 class is:0.831796511628
+===========average loss and acc for this epoch is 0.446159929037 and 0.868314445019=======
+===========================epoch 26====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.715882301331 0.0398354120553 and 0.87966966629======
+The forward inference time is 176.144771099 second
+the average acc among 40 class is:0.838627906977
+===========average loss and acc for this epoch is 0.445421010256 and 0.87034034729=======
+===========================epoch 27====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.723765850067 0.0399474687874 and 0.873226940632======
+The forward inference time is 186.007245064 second
+the average acc among 40 class is:0.841848837209
+===========average loss and acc for this epoch is 0.458421111107 and 0.873987019062=======
+===========================epoch 28====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.725823760033 0.0400833450258 and 0.881090164185======
+The forward inference time is 126.864480019 second
+the average acc among 40 class is:0.839877906977
+===========average loss and acc for this epoch is 0.427676707506 and 0.878038883209=======
+===========================epoch 29====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.704141795635 0.0402128025889 and 0.879069149494======
+The forward inference time is 149.569995165 second
+the average acc among 40 class is:0.838674418605
+===========average loss and acc for this epoch is 0.435385048389 and 0.877633690834=======
+===========================epoch 30====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.691476285458 0.0403442569077 and 0.88560962677======
+The forward inference time is 152.21415019 second
+the average acc among 40 class is:0.837965116279
+===========average loss and acc for this epoch is 0.433998256922 and 0.878444075584=======
+===========================epoch 31====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.690507292747 0.0404757335782 and 0.882282853127======
+The forward inference time is 140.587100983 second
+the average acc among 40 class is:0.830174418605
+===========average loss and acc for this epoch is 0.446005940437 and 0.864667773247=======
+===========================epoch 32====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.681557536125 0.0406319610775 and 0.882583141327======
+The forward inference time is 192.003970861 second
+the average acc among 40 class is:0.839215116279
+===========average loss and acc for this epoch is 0.432764679193 and 0.876418173313=======
+===========================epoch 33====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.68075209856 0.0407960899174 and 0.883222579956======
+The forward inference time is 191.574336052 second
+the average acc among 40 class is:0.838296511628
+===========average loss and acc for this epoch is 0.42989218235 and 0.873581826687=======
+===========================epoch 34====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.681552290916 0.0409662798047 and 0.881442725658======
+The forward inference time is 190.063593149 second
+the average acc among 40 class is:0.84375
+===========average loss and acc for this epoch is 0.426609069109 and 0.873176634312=======
+===========================epoch 35====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.655461370945 0.0411266610026 and 0.887160122395======
+The forward inference time is 145.646066904 second
+the average acc among 40 class is:0.839668604651
+===========average loss and acc for this epoch is 0.416310995817 and 0.882090747356=======
+===========================epoch 36====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.653993546963 0.0413012541831 and 0.888949990273======
+The forward inference time is 201.331617117 second
+the average acc among 40 class is:0.842122093023
+===========average loss and acc for this epoch is 0.418642997742 and 0.874797403812=======
+===========================epoch 37====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.658536553383 0.041473351419 and 0.885174453259======
+The forward inference time is 156.242219925 second
+the average acc among 40 class is:0.843127906977
+===========average loss and acc for this epoch is 0.420005559921 and 0.87884926796=======
+===========================epoch 38====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.630457401276 0.0416490137577 and 0.890878379345======
+The forward inference time is 170.093962193 second
+the average acc among 40 class is:0.850843023256
+===========average loss and acc for this epoch is 0.417902618647 and 0.880875229836=======
+===========================epoch 39====================
+0.0003
+=============average loss, l2 loss, acc  for this epoch is 0.637282431126 0.0418157614768 and 0.889277338982======
+The forward inference time is 186.138201952 second
+the average acc among 40 class is:0.847430232558
+===========average loss and acc for this epoch is 0.424239635468 and 0.874392211437=======
+===========================epoch 40====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.596602618694 0.041899163276 and 0.899802565575======
+The forward inference time is 194.187362909 second
+the average acc among 40 class is:0.856127906977
+===========average loss and acc for this epoch is 0.400062382221 and 0.888573765755=======
+===========================epoch 41====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.572149574757 0.0419070012867 and 0.902368545532======
+The forward inference time is 195.807057142 second
+the average acc among 40 class is:0.851215116279
+===========average loss and acc for this epoch is 0.39774081111 and 0.884116709232=======
+===========================epoch 42====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.563140630722 0.0419153943658 and 0.903394341469======
+The forward inference time is 196.24873209 second
+the average acc among 40 class is:0.850296511628
+===========average loss and acc for this epoch is 0.396039277315 and 0.886142611504=======
+===========================epoch 43====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.572621881962 0.0419258996844 and 0.901999175549======
+The forward inference time is 194.971585035 second
+the average acc among 40 class is:0.850255813953
+===========average loss and acc for this epoch is 0.403696626425 and 0.882901132107=======
+===========================epoch 44====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.554462969303 0.0419332161546 and 0.906376957893======
+The forward inference time is 198.758882046 second
+the average acc among 40 class is:0.853
+===========average loss and acc for this epoch is 0.394272655249 and 0.884116709232=======
+===========================epoch 45====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.567223191261 0.0419379137456 and 0.904985129833======
+The forward inference time is 145.200940132 second
+the average acc among 40 class is:0.847168604651
+===========average loss and acc for this epoch is 0.388687252998 and 0.885332226753=======
+===========================epoch 46====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.562906503677 0.0419554896653 and 0.903110861778======
+The forward inference time is 146.709935904 second
+the average acc among 40 class is:0.855
+===========average loss and acc for this epoch is 0.386716634035 and 0.890599668026=======
+===========================epoch 47====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.544490695 0.0419884733856 and 0.908760726452======
+The forward inference time is 155.04788518 second
+the average acc among 40 class is:0.848796511628
+===========average loss and acc for this epoch is 0.382447481155 and 0.887763381004=======
+===========================epoch 48====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.538882374763 0.0420098789036 and 0.908597111702======
+The forward inference time is 152.554042816 second
+the average acc among 40 class is:0.858918604651
+===========average loss and acc for this epoch is 0.375291079283 and 0.891815245152=======
+===========================epoch 49====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.540320277214 0.0420382395387 and 0.906046271324======
+The forward inference time is 142.382579088 second
+the average acc among 40 class is:0.854627906977
+===========average loss and acc for this epoch is 0.386285364628 and 0.886142611504=======
+===========================epoch 50====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.551858305931 0.0420715026557 and 0.903321862221======
+The forward inference time is 148.597718954 second
+the average acc among 40 class is:0.851459302326
+===========average loss and acc for this epoch is 0.391352444887 and 0.883306324482=======
+===========================epoch 51====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.535376489162 0.0421040020883 and 0.908543229103======
+The forward inference time is 149.84345603 second
+the average acc among 40 class is:0.852168604651
+===========average loss and acc for this epoch is 0.3905133605 and 0.885737419128=======
+===========================epoch 52====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.538046240807 0.0421322137117 and 0.908391356468======
+The forward inference time is 145.760398865 second
+the average acc among 40 class is:0.854540697674
+===========average loss and acc for this epoch is 0.381144970655 and 0.887763381004=======
+===========================epoch 53====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.53401362896 0.042166672647 and 0.909906208515======
+The forward inference time is 167.257003069 second
+the average acc among 40 class is:0.851837209302
+===========average loss and acc for this epoch is 0.387262105942 and 0.885737419128=======
+===========================epoch 54====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.519235014915 0.0421917513013 and 0.912996888161======
+The forward inference time is 171.838685036 second
+the average acc among 40 class is:0.863203488372
+===========average loss and acc for this epoch is 0.375825375319 and 0.892625629902=======
+===========================epoch 55====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.52255487442 0.0422173142433 and 0.910478115082======
+The forward inference time is 166.31051898 second
+the average acc among 40 class is:0.860290697674
+===========average loss and acc for this epoch is 0.381016910076 and 0.891815245152=======
+===========================epoch 56====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.509929001331 0.0422544702888 and 0.912163436413======
+The forward inference time is 159.163510084 second
+the average acc among 40 class is:0.861918604651
+===========average loss and acc for this epoch is 0.379690021276 and 0.891410052776=======
+===========================epoch 57====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.526527225971 0.0422891415656 and 0.908170342445======
+The forward inference time is 149.226521015 second
+the average acc among 40 class is:0.855459302326
+===========average loss and acc for this epoch is 0.395204275846 and 0.882495939732=======
+===========================epoch 58====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.531367182732 0.0423265360296 and 0.9078733325======
+The forward inference time is 145.083850145 second
+the average acc among 40 class is:0.854459302326
+===========average loss and acc for this epoch is 0.38205832243 and 0.890599668026=======
+===========================epoch 59====================
+0.00015
+=============average loss, l2 loss, acc  for this epoch is 0.520544290543 0.042366437614 and 0.90976113081======
+The forward inference time is 147.164878845 second
+the average acc among 40 class is:0.853581395349
+===========average loss and acc for this epoch is 0.390765458345 and 0.884521901608=======
+===========================epoch 60====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.495946109295 0.0423877425492 and 0.915323257446======
+The forward inference time is 149.831598997 second
+the average acc among 40 class is:0.853377906977
+===========average loss and acc for this epoch is 0.379065155983 and 0.884521901608=======
+===========================epoch 61====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.482945501804 0.04239731282 and 0.919073581696======
+The forward inference time is 147.491141081 second
+the average acc among 40 class is:0.86025
+===========average loss and acc for this epoch is 0.373375505209 and 0.889789283276=======
+===========================epoch 62====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.48273858428 0.0423995219171 and 0.917987048626======
+The forward inference time is 140.483182192 second
+the average acc among 40 class is:0.858627906977
+===========average loss and acc for this epoch is 0.377790808678 and 0.889789283276=======
+===========================epoch 63====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.472093164921 0.0423961877823 and 0.917987048626======
+The forward inference time is 167.448020935 second
+the average acc among 40 class is:0.858709302326
+===========average loss and acc for this epoch is 0.374245107174 and 0.891004860401=======
+===========================epoch 64====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.47011423111 0.0423986390233 and 0.920121192932======
+The forward inference time is 155.800965071 second
+the average acc among 40 class is:0.861331395349
+===========average loss and acc for this epoch is 0.368870824575 and 0.892625629902=======
+===========================epoch 65====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.475058227777 0.0424053445458 and 0.918555617332======
+The forward inference time is 157.566403151 second
+the average acc among 40 class is:0.865040697674
+===========average loss and acc for this epoch is 0.372952580452 and 0.891004860401=======
+===========================epoch 66====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.481893241405 0.042406372726 and 0.916266322136======
+The forward inference time is 154.689993858 second
+the average acc among 40 class is:0.865581395349
+===========average loss and acc for this epoch is 0.367107391357 and 0.896677494049=======
+===========================epoch 67====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.474649339914 0.0424096472561 and 0.91800057888======
+The forward inference time is 162.695533037 second
+the average acc among 40 class is:0.862494186047
+===========average loss and acc for this epoch is 0.368418484926 and 0.895056724548=======
+===========================epoch 68====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.456386327744 0.0424077026546 and 0.922015666962======
+The forward inference time is 164.567479134 second
+the average acc among 40 class is:0.853622093023
+===========average loss and acc for this epoch is 0.368388682604 and 0.891815245152=======
+===========================epoch 69====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.466339677572 0.0424087271094 and 0.920279860497======
+The forward inference time is 192.656876087 second
+the average acc among 40 class is:0.863203488372
+===========average loss and acc for this epoch is 0.36785697937 and 0.894651532173=======
+===========================epoch 70====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.459458440542 0.0424132235348 and 0.919982910156======
+The forward inference time is 136.514447212 second
+the average acc among 40 class is:0.864040697674
+===========average loss and acc for this epoch is 0.366637349129 and 0.8893840909=======
+===========================epoch 71====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.466554492712 0.0424160584807 and 0.920806109905======
+The forward inference time is 156.069212198 second
+the average acc among 40 class is:0.861953488372
+===========average loss and acc for this epoch is 0.369861602783 and 0.8893840909=======
+===========================epoch 72====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.460545599461 0.0424201972783 and 0.917447268963======
+The forward inference time is 155.084406137 second
+the average acc among 40 class is:0.857296511628
+===========average loss and acc for this epoch is 0.368716567755 and 0.889789283276=======
+===========================epoch 73====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.466724097729 0.0424268208444 and 0.91848307848======
+The forward inference time is 160.020885944 second
+the average acc among 40 class is:0.859674418605
+===========average loss and acc for this epoch is 0.368840098381 and 0.886142611504=======
+===========================epoch 74====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.453322172165 0.0424312651157 and 0.920392692089======
+The forward inference time is 152.495067835 second
+the average acc among 40 class is:0.865412790698
+===========average loss and acc for this epoch is 0.364230275154 and 0.893435955048=======
+===========================epoch 75====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.453977972269 0.0424395576119 and 0.92205286026======
+The forward inference time is 147.935432911 second
+the average acc among 40 class is:0.860331395349
+===========average loss and acc for this epoch is 0.373644411564 and 0.8893840909=======
+===========================epoch 76====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.454700857401 0.042446475476 and 0.919555962086======
+The forward inference time is 155.449145079 second
+the average acc among 40 class is:0.857337209302
+===========average loss and acc for this epoch is 0.37563470006 and 0.886952996254=======
+===========================epoch 77====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.464136302471 0.0424551814795 and 0.920222401619======
+The forward inference time is 161.332113981 second
+the average acc among 40 class is:0.856540697674
+===========average loss and acc for this epoch is 0.363332629204 and 0.891004860401=======
+===========================epoch 78====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.446699142456 0.0424595065415 and 0.922116875648======
+The forward inference time is 159.395406961 second
+the average acc among 40 class is:0.859540697674
+===========average loss and acc for this epoch is 0.36284995079 and 0.892220437527=======
+===========================epoch 79====================
+7.5e-05
+=============average loss, l2 loss, acc  for this epoch is 0.444334089756 0.0424715876579 and 0.921437084675======
+The forward inference time is 129.493921041 second
+the average acc among 40 class is:0.869412790698
+===========average loss and acc for this epoch is 0.360330879688 and 0.896677494049=======
+===========================epoch 80====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.458201736212 0.0424742288888 and 0.923291087151======
+The forward inference time is 164.398208141 second
+the average acc among 40 class is:0.860744186047
+===========average loss and acc for this epoch is 0.365136742592 and 0.893435955048=======
+===========================epoch 81====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.442924112082 0.0424735061824 and 0.925578713417======
+The forward inference time is 171.082834005 second
+the average acc among 40 class is:0.860784883721
+===========average loss and acc for this epoch is 0.360833227634 and 0.896677494049=======
+===========================epoch 82====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.433714538813 0.0424731969833 and 0.926046013832======
+The forward inference time is 163.093274832 second
+the average acc among 40 class is:0.852877906977
+===========average loss and acc for this epoch is 0.355069100857 and 0.891004860401=======
+===========================epoch 83====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.427477270365 0.0424714125693 and 0.925932884216======
+The forward inference time is 170.76713109 second
+the average acc among 40 class is:0.862831395349
+===========average loss and acc for this epoch is 0.359227597713 and 0.893841147423=======
+===========================epoch 84====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.431779146194 0.04247469455 and 0.926201224327======
+The forward inference time is 151.422835827 second
+the average acc among 40 class is:0.860075581395
+===========average loss and acc for this epoch is 0.36024838686 and 0.896272301674=======
+===========================epoch 85====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.427385568619 0.042474232614 and 0.923520445824======
+The forward inference time is 146.216970205 second
+the average acc among 40 class is:0.858703488372
+===========average loss and acc for this epoch is 0.362296521664 and 0.895056724548=======
+===========================epoch 86====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.429560482502 0.0424745306373 and 0.924925804138======
+The forward inference time is 174.743252993 second
+the average acc among 40 class is:0.86325
+===========average loss and acc for this epoch is 0.355710864067 and 0.893841147423=======
+===========================epoch 87====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.4380684793 0.0424754209816 and 0.920878589153======
+The forward inference time is 129.834608078 second
+the average acc among 40 class is:0.861668604651
+===========average loss and acc for this epoch is 0.362436264753 and 0.895867109299=======
+===========================epoch 88====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.431115537882 0.0424758307636 and 0.925357699394======
+The forward inference time is 162.827203989 second
+the average acc among 40 class is:0.851872093023
+===========average loss and acc for this epoch is 0.363395810127 and 0.891410052776=======
+===========================epoch 89====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.426244020462 0.0424744524062 and 0.927107155323======
+The forward inference time is 167.823385954 second
+the average acc among 40 class is:0.854540697674
+===========average loss and acc for this epoch is 0.359454184771 and 0.891004860401=======
+===========================epoch 90====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.433923304081 0.0424736067653 and 0.929512798786======
+The forward inference time is 157.318215132 second
+the average acc among 40 class is:0.860331395349
+===========average loss and acc for this epoch is 0.362525224686 and 0.893030822277=======
+===========================epoch 91====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.427669346333 0.0424761995673 and 0.926778137684======
+The forward inference time is 176.743725061 second
+the average acc among 40 class is:0.860418604651
+===========average loss and acc for this epoch is 0.361181288958 and 0.891410052776=======
+===========================epoch 92====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.42101675272 0.0424721576273 and 0.928009688854======
+The forward inference time is 152.065557957 second
+the average acc among 40 class is:0.863662790698
+===========average loss and acc for this epoch is 0.35920125246 and 0.895056724548=======
+===========================epoch 93====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.439624637365 0.0424723252654 and 0.927230238914======
+The forward inference time is 130.654650927 second
+the average acc among 40 class is:0.853622093023
+===========average loss and acc for this epoch is 0.364681243896 and 0.891004860401=======
+===========================epoch 94====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.418692409992 0.0424718670547 and 0.927712798119======
+The forward inference time is 168.864609003 second
+the average acc among 40 class is:0.866662790698
+===========average loss and acc for this epoch is 0.359834492207 and 0.895056724548=======
+===========================epoch 95====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.435736179352 0.0424715764821 and 0.925114810467======
+The forward inference time is 161.033538818 second
+the average acc among 40 class is:0.867377906977
+===========average loss and acc for this epoch is 0.36076438427 and 0.894651532173=======
+===========================epoch 96====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.410749435425 0.0424738712609 and 0.929269909859======
+The forward inference time is 147.820183039 second
+the average acc among 40 class is:0.858372093023
+===========average loss and acc for this epoch is 0.362762272358 and 0.891410052776=======
+===========================epoch 97====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.413448423147 0.0424751602113 and 0.928691208363======
+The forward inference time is 166.136290073 second
+the average acc among 40 class is:0.858290697674
+===========average loss and acc for this epoch is 0.356627315283 and 0.894651532173=======
+===========================epoch 98====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.41824144125 0.0424746982753 and 0.927684128284======
+The forward inference time is 168.37878108 second
+the average acc among 40 class is:0.859372093023
+===========average loss and acc for this epoch is 0.357561439276 and 0.893435955048=======
+===========================epoch 99====================
+3.75e-05
+=============average loss, l2 loss, acc  for this epoch is 0.416904300451 0.0424747057259 and 0.929376244545======
+The forward inference time is 126.939448118 second
+the average acc among 40 class is:0.858040697674
+===========average loss and acc for this epoch is 0.354466795921 and 0.894246339798=======
+===========================epoch 100====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.417977035046 0.0424737557769 and 0.929209113121======
+The forward inference time is 135.050266027 second
+the average acc among 40 class is:0.857709302326
+===========average loss and acc for this epoch is 0.352683395147 and 0.894246339798=======
+===========================epoch 101====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.413865745068 0.0424740239978 and 0.931154370308======
+The forward inference time is 143.97778821 second
+the average acc among 40 class is:0.859709302326
+===========average loss and acc for this epoch is 0.353989094496 and 0.892220437527=======
+===========================epoch 102====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.413359075785 0.0424746051431 and 0.929259777069======
+The forward inference time is 143.661884069 second
+the average acc among 40 class is:0.85225
+===========average loss and acc for this epoch is 0.357042014599 and 0.888573765755=======
+===========================epoch 103====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.405729621649 0.0424721240997 and 0.929865479469======
+The forward inference time is 128.42326498 second
+the average acc among 40 class is:0.862331395349
+===========average loss and acc for this epoch is 0.35351011157 and 0.894651532173=======
+===========================epoch 104====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.405615419149 0.0424714684486 and 0.928687870502======
+The forward inference time is 166.285866022 second
+the average acc among 40 class is:0.862540697674
+===========average loss and acc for this epoch is 0.351574271917 and 0.895056724548=======
+===========================epoch 105====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.412824779749 0.0424713492393 and 0.929622471333======
+The forward inference time is 173.292192936 second
+the average acc among 40 class is:0.855912790698
+===========average loss and acc for this epoch is 0.353786200285 and 0.892220437527=======
+===========================epoch 106====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.400461673737 0.0424711965024 and 0.930813610554======
+The forward inference time is 178.823447943 second
+the average acc among 40 class is:0.861081395349
+===========average loss and acc for this epoch is 0.353774189949 and 0.894246339798=======
+===========================epoch 107====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.417234033346 0.0424714758992 and 0.9300172925======
+The forward inference time is 219.342495918 second
+the average acc among 40 class is:0.861459302326
+===========average loss and acc for this epoch is 0.353948533535 and 0.893030822277=======
+===========================epoch 108====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.405456602573 0.0424714684486 and 0.930803418159======
+The forward inference time is 216.344383955 second
+the average acc among 40 class is:0.860331395349
+===========average loss and acc for this epoch is 0.348715633154 and 0.896272301674=======
+===========================epoch 109====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.400629103184 0.0424709878862 and 0.931491732597======
+The forward inference time is 228.883172989 second
+the average acc among 40 class is:0.8575
+===========average loss and acc for this epoch is 0.357646048069 and 0.892220437527=======
+===========================epoch 110====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.413086503744 0.0424693003297 and 0.930673480034======
+The forward inference time is 174.023772955 second
+the average acc among 40 class is:0.853122093023
+===========average loss and acc for this epoch is 0.356933057308 and 0.893030822277=======
+===========================epoch 111====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.415737569332 0.042468059808 and 0.930263519287======
+The forward inference time is 170.288579941 second
+the average acc among 40 class is:0.8575
+===========average loss and acc for this epoch is 0.354176580906 and 0.895056724548=======
+===========================epoch 112====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.402341932058 0.042466416955 and 0.932100653648======
+The forward inference time is 174.041412115 second
+the average acc among 40 class is:0.858831395349
+===========average loss and acc for this epoch is 0.353493124247 and 0.893435955048=======
+===========================epoch 113====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.398626744747 0.0424647703767 and 0.930560469627======
+The forward inference time is 177.062454939 second
+the average acc among 40 class is:0.866540697674
+===========average loss and acc for this epoch is 0.349139988422 and 0.897082686424=======
+===========================epoch 114====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.407570749521 0.0424642339349 and 0.92922437191======
+The forward inference time is 217.591418982 second
+the average acc among 40 class is:0.858662790698
+===========average loss and acc for this epoch is 0.350805848837 and 0.895461916924=======
+===========================epoch 115====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.401914209127 0.0424655452371 and 0.933354198933======
+The forward inference time is 232.402125835 second
+the average acc among 40 class is:0.864709302326
+===========average loss and acc for this epoch is 0.35472214222 and 0.895461916924=======
+===========================epoch 116====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.395212680101 0.0424660667777 and 0.930408656597======
+The forward inference time is 208.571683168 second
+the average acc among 40 class is:0.859622093023
+===========average loss and acc for this epoch is 0.35426351428 and 0.897082686424=======
+===========================epoch 117====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.413318544626 0.0424655303359 and 0.930295646191======
+The forward inference time is 217.12541604 second
+the average acc among 40 class is:0.856040697674
+===========average loss and acc for this epoch is 0.357092559338 and 0.894246339798=======
+===========================epoch 118====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.41132235527 0.0424654185772 and 0.930277049541======
+The forward inference time is 212.216017962 second
+the average acc among 40 class is:0.863372093023
+===========average loss and acc for this epoch is 0.354592710733 and 0.897487819195=======
+===========================epoch 119====================
+1.875e-05
+=============average loss, l2 loss, acc  for this epoch is 0.399416267872 0.0424648821354 and 0.931081771851======
+The forward inference time is 182.239660025 second
+the average acc among 40 class is:0.857459302326
+===========average loss and acc for this epoch is 0.351707845926 and 0.895461916924=======
+===========================epoch 120====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.40494504571 0.0424633324146 and 0.930238246918======
+The forward inference time is 214.450627089 second
+the average acc among 40 class is:0.864994186047
+===========average loss and acc for this epoch is 0.348893225193 and 0.89870339632=======
+===========================epoch 121====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.393261015415 0.0424625948071 and 0.931901633739======
+The forward inference time is 225.42687583 second
+the average acc among 40 class is:0.864622093023
+===========average loss and acc for this epoch is 0.349596768618 and 0.898298203945=======
+===========================epoch 122====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.406564563513 0.0424620695412 and 0.930032432079======
+The forward inference time is 165.671591043 second
+the average acc among 40 class is:0.861081395349
+===========average loss and acc for this epoch is 0.349152565002 and 0.895867109299=======
+===========================epoch 123====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.387364298105 0.0424622222781 and 0.934897780418======
+The forward inference time is 218.411602974 second
+the average acc among 40 class is:0.862831395349
+===========average loss and acc for this epoch is 0.355685502291 and 0.895461916924=======
+===========================epoch 124====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.402332395315 0.0424613878131 and 0.933550000191======
+The forward inference time is 234.819168091 second
+the average acc among 40 class is:0.864581395349
+===========average loss and acc for this epoch is 0.357450455427 and 0.895056724548=======
+===========================epoch 125====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.406457126141 0.0424613393843 and 0.929919421673======
+The forward inference time is 225.274940014 second
+the average acc among 40 class is:0.863790697674
+===========average loss and acc for this epoch is 0.351276904345 and 0.896677494049=======
+===========================epoch 126====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.395495951176 0.0424610152841 and 0.93172454834======
+The forward inference time is 229.381645918 second
+the average acc among 40 class is:0.860453488372
+===========average loss and acc for this epoch is 0.352487266064 and 0.895461916924=======
+===========================epoch 127====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.409364312887 0.0424606874585 and 0.932390987873======
+The forward inference time is 217.424021959 second
+the average acc among 40 class is:0.861418604651
+===========average loss and acc for this epoch is 0.356993705034 and 0.893435955048=======
+===========================epoch 128====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.395594388247 0.0424603037536 and 0.93265914917======
+The forward inference time is 232.080432892 second
+the average acc among 40 class is:0.862581395349
+===========average loss and acc for this epoch is 0.353061765432 and 0.899108588696=======
+===========================epoch 129====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.407046407461 0.042460180819 and 0.927201628685======
+The forward inference time is 230.547915936 second
+the average acc among 40 class is:0.858831395349
+===========average loss and acc for this epoch is 0.355882078409 and 0.895867109299=======
+===========================epoch 130====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.403735160828 0.0424597784877 and 0.9332665205======
+The forward inference time is 199.469606161 second
+the average acc among 40 class is:0.862959302326
+===========average loss and acc for this epoch is 0.352687746286 and 0.894651532173=======
+===========================epoch 131====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.407863765955 0.0424597337842 and 0.932223916054======
+The forward inference time is 216.043913126 second
+the average acc among 40 class is:0.860709302326
+===========average loss and acc for this epoch is 0.354809314013 and 0.894246339798=======
+===========================epoch 132====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.401642978191 0.0424593761563 and 0.9301404953======
+The forward inference time is 234.908159018 second
+the average acc among 40 class is:0.862872093023
+===========average loss and acc for this epoch is 0.352144658566 and 0.897082686424=======
+===========================epoch 133====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.40394371748 0.0424595102668 and 0.932046711445======
+The forward inference time is 227.126411915 second
+the average acc among 40 class is:0.861372093023
+===========average loss and acc for this epoch is 0.360918402672 and 0.893841147423=======
+===========================epoch 134====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.399740070105 0.0424590036273 and 0.932227313519======
+The forward inference time is 228.715406179 second
+the average acc among 40 class is:0.855622093023
+===========average loss and acc for this epoch is 0.352469623089 and 0.894246339798=======
+===========================epoch 135====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.388492405415 0.0424588471651 and 0.932883560658======
+The forward inference time is 227.434159994 second
+the average acc among 40 class is:0.860540697674
+===========average loss and acc for this epoch is 0.34693852067 and 0.895461916924=======
+===========================epoch 136====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.404031604528 0.0424584522843 and 0.931571006775======
+The forward inference time is 213.916707993 second
+the average acc among 40 class is:0.86325
+===========average loss and acc for this epoch is 0.349585086107 and 0.896677494049=======
+===========================epoch 137====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.401604741812 0.0424579940736 and 0.929683208466======
+The forward inference time is 209.816581964 second
+the average acc among 40 class is:0.863325581395
+===========average loss and acc for this epoch is 0.352569013834 and 0.899513781071=======
+===========================epoch 138====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.395615756512 0.0424579270184 and 0.933050513268======
+The forward inference time is 221.499217987 second
+the average acc among 40 class is:0.859377906977
+===========average loss and acc for this epoch is 0.351793527603 and 0.891815245152=======
+===========================epoch 139====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.40608471632 0.0424577854574 and 0.930042564869======
+The forward inference time is 234.649358988 second
+the average acc among 40 class is:0.867081395349
+===========average loss and acc for this epoch is 0.35070297122 and 0.899513781071=======
+===========================epoch 140====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.387669712305 0.0424576029181 and 0.932836353779======
+The forward inference time is 174.309363127 second
+the average acc among 40 class is:0.865290697674
+===========average loss and acc for this epoch is 0.352390766144 and 0.896677494049=======
+===========================epoch 141====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392091840506 0.042456779629 and 0.933025240898======
+The forward inference time is 171.940937996 second
+the average acc among 40 class is:0.865953488372
+===========average loss and acc for this epoch is 0.354467958212 and 0.898298203945=======
+===========================epoch 142====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38006734848 0.0424565523863 and 0.934582352638======
+The forward inference time is 171.595308065 second
+the average acc among 40 class is:0.858581395349
+===========average loss and acc for this epoch is 0.355348199606 and 0.895867109299=======
+===========================epoch 143====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.399590313435 0.0424558445811 and 0.931437790394======
+The forward inference time is 173.276899099 second
+the average acc among 40 class is:0.862959302326
+===========average loss and acc for this epoch is 0.351698726416 and 0.895867109299=======
+===========================epoch 144====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.385839521885 0.0424552746117 and 0.932343661785======
+The forward inference time is 172.718950987 second
+the average acc among 40 class is:0.866790697674
+===========average loss and acc for this epoch is 0.352219700813 and 0.897082686424=======
+===========================epoch 145====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.400658458471 0.0424550697207 and 0.933398067951======
+The forward inference time is 224.459316969 second
+the average acc among 40 class is:0.854540697674
+===========average loss and acc for this epoch is 0.353938728571 and 0.892625629902=======
+===========================epoch 146====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.393153339624 0.0424550697207 and 0.93283957243======
+The forward inference time is 224.595854044 second
+the average acc among 40 class is:0.8645
+===========average loss and acc for this epoch is 0.345868706703 and 0.896677494049=======
+===========================epoch 147====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.398480951786 0.0424556061625 and 0.932299792767======
+The forward inference time is 305.038331032 second
+the average acc among 40 class is:0.854040697674
+===========average loss and acc for this epoch is 0.355636030436 and 0.892220437527=======
+===========================epoch 148====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.393064528704 0.0424553416669 and 0.932662606239======
+The forward inference time is 279.466741085 second
+the average acc among 40 class is:0.867662790698
+===========average loss and acc for this epoch is 0.34924146533 and 0.899918973446=======
+===========================epoch 149====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.387543290854 0.0424544587731 and 0.935263991356======
+The forward inference time is 278.895445824 second
+the average acc among 40 class is:0.856668604651
+===========average loss and acc for this epoch is 0.351674854755 and 0.892625629902=======
+===========================epoch 150====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.389559686184 0.0424538105726 and 0.934897780418======
+The forward inference time is 268.294023037 second
+the average acc among 40 class is:0.859912790698
+===========average loss and acc for this epoch is 0.348976194859 and 0.896677494049=======
+===========================epoch 151====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.406569898129 0.0424535349011 and 0.929824948311======
+The forward inference time is 289.54330802 second
+the average acc among 40 class is:0.863872093023
+===========average loss and acc for this epoch is 0.352570325136 and 0.897082686424=======
+===========================epoch 152====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38999658823 0.0424529798329 and 0.933136582375======
+The forward inference time is 289.907094955 second
+the average acc among 40 class is:0.859
+===========average loss and acc for this epoch is 0.348035901785 and 0.895056724548=======
+===========================epoch 153====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.385295063257 0.0424527451396 and 0.9334166646======
+The forward inference time is 213.091907024 second
+the average acc among 40 class is:0.865331395349
+===========average loss and acc for this epoch is 0.350818067789 and 0.89870339632=======
+===========================epoch 154====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.389936864376 0.0424518585205 and 0.935083389282======
+The forward inference time is 230.01275897 second
+the average acc among 40 class is:0.859075581395
+===========average loss and acc for this epoch is 0.347065836191 and 0.896677494049=======
+===========================epoch 155====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.391747146845 0.0424515232444 and 0.931270718575======
+The forward inference time is 242.304698944 second
+the average acc among 40 class is:0.863081395349
+===========average loss and acc for this epoch is 0.350390791893 and 0.897082686424=======
+===========================epoch 156====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.3847399652 0.0424515865743 and 0.934471011162======
+The forward inference time is 235.374130011 second
+the average acc among 40 class is:0.863953488372
+===========average loss and acc for this epoch is 0.347780138254 and 0.898298203945=======
+===========================epoch 157====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.389707803726 0.0424516163766 and 0.930484592915======
+The forward inference time is 231.356688976 second
+the average acc among 40 class is:0.862040697674
+===========average loss and acc for this epoch is 0.351673156023 and 0.895867109299=======
+===========================epoch 158====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.390268713236 0.0424514189363 and 0.934013962746======
+The forward inference time is 222.602097034 second
+the average acc among 40 class is:0.859203488372
+===========average loss and acc for this epoch is 0.352701693773 and 0.89789301157=======
+===========================epoch 159====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.385689258575 0.042451005429 and 0.931930363178======
+The forward inference time is 289.293336868 second
+the average acc among 40 class is:0.859122093023
+===========average loss and acc for this epoch is 0.354983091354 and 0.895056724548=======
+===========================epoch 160====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.388147950172 0.0424504205585 and 0.936308205128======
+The forward inference time is 304.370486975 second
+the average acc among 40 class is:0.864331395349
+===========average loss and acc for this epoch is 0.353684812784 and 0.896677494049=======
+===========================epoch 161====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.385550290346 0.0424503162503 and 0.933514475822======
+The forward inference time is 307.317398787 second
+the average acc among 40 class is:0.860372093023
+===========average loss and acc for this epoch is 0.348863571882 and 0.896677494049=======
+===========================epoch 162====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.403591096401 0.0424499996006 and 0.931009173393======
+The forward inference time is 302.909298897 second
+the average acc among 40 class is:0.866290697674
+===========average loss and acc for this epoch is 0.350476026535 and 0.895867109299=======
+===========================epoch 163====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.398788064718 0.0424494072795 and 0.931601345539======
+The forward inference time is 313.916872025 second
+the average acc among 40 class is:0.861
+===========average loss and acc for this epoch is 0.351047426462 and 0.895056724548=======
+===========================epoch 164====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.391882836819 0.042448438704 and 0.934325993061======
+The forward inference time is 300.276534081 second
+the average acc among 40 class is:0.864872093023
+===========average loss and acc for this epoch is 0.34799477458 and 0.89870339632=======
+===========================epoch 165====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.387928873301 0.0424477383494 and 0.933477401733======
+The forward inference time is 236.196868896 second
+the average acc among 40 class is:0.862662790698
+===========average loss and acc for this epoch is 0.350498706102 and 0.896677494049=======
+===========================epoch 166====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392625659704 0.0424475409091 and 0.931672215462======
+The forward inference time is 224.734539032 second
+the average acc among 40 class is:0.861965116279
+===========average loss and acc for this epoch is 0.348851978779 and 0.893030822277=======
+===========================epoch 167====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.397616118193 0.0424468293786 and 0.932637214661======
+The forward inference time is 247.520708084 second
+the average acc among 40 class is:0.860040697674
+===========average loss and acc for this epoch is 0.35591930151 and 0.894651532173=======
+===========================epoch 168====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.400160938501 0.0424461401999 and 0.933237850666======
+The forward inference time is 225.342502117 second
+the average acc among 40 class is:0.863662790698
+===========average loss and acc for this epoch is 0.352746129036 and 0.896677494049=======
+===========================epoch 169====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.393882870674 0.0424450822175 and 0.932517409325======
+The forward inference time is 231.579663038 second
+the average acc among 40 class is:0.86175
+===========average loss and acc for this epoch is 0.354041516781 and 0.895461916924=======
+===========================epoch 170====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392173826694 0.0424446053803 and 0.932785630226======
+The forward inference time is 169.809938908 second
+the average acc among 40 class is:0.856790697674
+===========average loss and acc for this epoch is 0.352831333876 and 0.893030822277=======
+===========================epoch 171====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.383116781712 0.0424439124763 and 0.936829447746======
+The forward inference time is 188.420983076 second
+the average acc among 40 class is:0.85775
+===========average loss and acc for this epoch is 0.349999696016 and 0.895867109299=======
+===========================epoch 172====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.388617187738 0.0424431450665 and 0.934509754181======
+The forward inference time is 173.720248222 second
+the average acc among 40 class is:0.86
+===========average loss and acc for this epoch is 0.349038541317 and 0.896272301674=======
+===========================epoch 173====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.381637394428 0.0424422845244 and 0.937094390392======
+The forward inference time is 176.794559956 second
+the average acc among 40 class is:0.863372093023
+===========average loss and acc for this epoch is 0.348032355309 and 0.896272301674=======
+===========================epoch 174====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38273781538 0.0424423739314 and 0.933495879173======
+The forward inference time is 179.78770709 second
+the average acc among 40 class is:0.864790697674
+===========average loss and acc for this epoch is 0.350967437029 and 0.897487819195=======
+===========================epoch 175====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.402040719986 0.0424425527453 and 0.932126045227======
+The forward inference time is 177.195369005 second
+the average acc among 40 class is:0.863
+===========average loss and acc for this epoch is 0.344696551561 and 0.896677494049=======
+===========================epoch 176====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.390391111374 0.0424425080419 and 0.933332264423======
+The forward inference time is 164.81563592 second
+the average acc among 40 class is:0.861872093023
+===========average loss and acc for this epoch is 0.349183291197 and 0.894246339798=======
+===========================epoch 177====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.400381177664 0.0424420647323 and 0.931046307087======
+The forward inference time is 164.684139013 second
+the average acc among 40 class is:0.863912790698
+===========average loss and acc for this epoch is 0.34756693244 and 0.898298203945=======
+===========================epoch 178====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.394957065582 0.0424409285188 and 0.932401001453======
+The forward inference time is 164.220610857 second
+the average acc among 40 class is:0.8625
+===========average loss and acc for this epoch is 0.352068990469 and 0.899108588696=======
+===========================epoch 179====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.394523978233 0.0424400195479 and 0.930832087994======
+The forward inference time is 181.030306816 second
+the average acc among 40 class is:0.861040697674
+===========average loss and acc for this epoch is 0.351022809744 and 0.894246339798=======
+===========================epoch 180====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392332017422 0.0424394831061 and 0.933332324028======
+The forward inference time is 188.436841965 second
+the average acc among 40 class is:0.858662790698
+===========average loss and acc for this epoch is 0.354403823614 and 0.894246339798=======
+===========================epoch 181====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.383610963821 0.0424391105771 and 0.933502554893======
+The forward inference time is 232.173876047 second
+the average acc among 40 class is:0.8565
+===========average loss and acc for this epoch is 0.352539867163 and 0.893435955048=======
+===========================epoch 182====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.376583397388 0.0424386262894 and 0.933053851128======
+The forward inference time is 271.63041997 second
+the average acc among 40 class is:0.862959302326
+===========average loss and acc for this epoch is 0.352254658937 and 0.892625629902=======
+===========================epoch 183====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38531395793 0.0424380712211 and 0.933313667774======
+The forward inference time is 238.295817137 second
+the average acc among 40 class is:0.858581395349
+===========average loss and acc for this epoch is 0.348662078381 and 0.895056724548=======
+===========================epoch 184====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.391520708799 0.042438287288 and 0.934064507484======
+The forward inference time is 295.496647835 second
+the average acc among 40 class is:0.86125
+===========average loss and acc for this epoch is 0.35056000948 and 0.893435955048=======
+===========================epoch 185====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.388958781958 0.0424387566745 and 0.93298470974======
+The forward inference time is 301.909038067 second
+the average acc among 40 class is:0.861331395349
+===========average loss and acc for this epoch is 0.352433383465 and 0.894651532173=======
+===========================epoch 186====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392685115337 0.042439520359 and 0.931800484657======
+The forward inference time is 274.39353013 second
+the average acc among 40 class is:0.861877906977
+===========average loss and acc for this epoch is 0.353072285652 and 0.893841147423=======
+===========================epoch 187====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.390925586224 0.0424398966134 and 0.93485724926======
+The forward inference time is 274.863013983 second
+the average acc among 40 class is:0.862790697674
+===========average loss and acc for this epoch is 0.356042355299 and 0.894246339798=======
+===========================epoch 188====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38351508975 0.0424399375916 and 0.931832492352======
+The forward inference time is 331.386605978 second
+the average acc among 40 class is:0.861203488372
+===========average loss and acc for this epoch is 0.346680760384 and 0.896272301674=======
+===========================epoch 189====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.378499895334 0.0424390211701 and 0.935894846916======
+The forward inference time is 260.396806002 second
+the average acc among 40 class is:0.860540697674
+===========average loss and acc for this epoch is 0.35364022851 and 0.893030822277=======
+===========================epoch 190====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.380035161972 0.0424386672676 and 0.935594558716======
+The forward inference time is 258.469382048 second
+the average acc among 40 class is:0.860372093023
+===========average loss and acc for this epoch is 0.35344812274 and 0.894246339798=======
+===========================epoch 191====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.398177802563 0.0424391701818 and 0.933249473572======
+The forward inference time is 244.312753201 second
+the average acc among 40 class is:0.858331395349
+===========average loss and acc for this epoch is 0.350860446692 and 0.895056724548=======
+===========================epoch 192====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.373907953501 0.0424386933446 and 0.934379935265======
+The forward inference time is 267.985069036 second
+the average acc among 40 class is:0.865209302326
+===========average loss and acc for this epoch is 0.350427597761 and 0.896677494049=======
+===========================epoch 193====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.386281460524 0.0424376428127 and 0.929875552654======
+The forward inference time is 252.394398928 second
+the average acc among 40 class is:0.864081395349
+===========average loss and acc for this epoch is 0.349165737629 and 0.894651532173=======
+===========================epoch 194====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.386770188808 0.0424373932183 and 0.936046600342======
+The forward inference time is 253.837521076 second
+the average acc among 40 class is:0.861290697674
+===========average loss and acc for this epoch is 0.350772678852 and 0.895867109299=======
+===========================epoch 195====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38267493248 0.0424379147589 and 0.933865368366======
+The forward inference time is 280.54365015 second
+the average acc among 40 class is:0.861377906977
+===========average loss and acc for this epoch is 0.353793114424 and 0.893435955048=======
+===========================epoch 196====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.386317491531 0.0424380674958 and 0.932633876801======
+The forward inference time is 240.52827096 second
+the average acc among 40 class is:0.857831395349
+===========average loss and acc for this epoch is 0.354101330042 and 0.895867109299=======
+===========================epoch 197====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.392946183681 0.0424377731979 and 0.934300601482======
+The forward inference time is 261.307594061 second
+the average acc among 40 class is:0.864459302326
+===========average loss and acc for this epoch is 0.346630185843 and 0.895867109299=======
+===========================epoch 198====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.368131577969 0.042437851429 and 0.940384030342======
+The forward inference time is 291.502556086 second
+the average acc among 40 class is:0.855831395349
+===========average loss and acc for this epoch is 0.348838090897 and 0.893841147423=======
+===========================epoch 199====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.380953878164 0.0424375012517 and 0.933408141136======
+The forward inference time is 294.864591122 second
+the average acc among 40 class is:0.865162790698
+===========average loss and acc for this epoch is 0.348348706961 and 0.899513781071=======
+===========================epoch 200====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.390007197857 0.0424377880991 and 0.934651553631======
+The forward inference time is 277.753162146 second
+the average acc among 40 class is:0.857790697674
+===========average loss and acc for this epoch is 0.349514603615 and 0.894246339798=======
+===========================epoch 201====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.375599384308 0.0424376577139 and 0.93470543623======
+The forward inference time is 266.761162043 second
+the average acc among 40 class is:0.8575
+===========average loss and acc for this epoch is 0.349287480116 and 0.894651532173=======
+===========================epoch 202====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.38551479578 0.0424376428127 and 0.932902038097======
+The forward inference time is 304.71527791 second
+the average acc among 40 class is:0.862081395349
+===========average loss and acc for this epoch is 0.35150706768 and 0.897082686424=======
+===========================epoch 203====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.388030350208 0.0424369461834 and 0.93454349041======
+The forward inference time is 280.587986946 second
+the average acc among 40 class is:0.864040697674
+===========average loss and acc for this epoch is 0.352579325438 and 0.895461916924=======
+===========================epoch 204====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.383349239826 0.04243632406 and 0.933177113533======
+The forward inference time is 306.001564026 second
+the average acc among 40 class is:0.861959302326
+===========average loss and acc for this epoch is 0.349997550249 and 0.892625629902=======
+===========================epoch 205====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.386123359203 0.0424353666604 and 0.933129906654======
+The forward inference time is 273.37124896 second
+the average acc among 40 class is:0.858831395349
+===========average loss and acc for this epoch is 0.348633468151 and 0.895461916924=======
+===========================epoch 206====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.382906347513 0.0424353517592 and 0.934550285339======
+The forward inference time is 275.616219044 second
+the average acc among 40 class is:0.86325
+===========average loss and acc for this epoch is 0.347702682018 and 0.897082686424=======
+===========================epoch 207====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.384667128325 0.042435221374 and 0.935977578163======
+The forward inference time is 248.23880291 second
+the average acc among 40 class is:0.860668604651
+===========average loss and acc for this epoch is 0.352485239506 and 0.895056724548=======
+===========================epoch 208====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.386959433556 0.0424345918 and 0.936788916588======
+The forward inference time is 249.897003889 second
+the average acc among 40 class is:0.859203488372
+===========average loss and acc for this epoch is 0.350195229053 and 0.894651532173=======
+===========================epoch 209====================
+1e-05
+=============average loss, l2 loss, acc  for this epoch is 0.393617838621 0.0424350686371 and 0.931832492352======
+The forward inference time is 267.294548035 second
+the average acc among 40 class is:0.858
+===========average loss and acc for this epoch is 0.355038225651 and 0.893030822277=======
