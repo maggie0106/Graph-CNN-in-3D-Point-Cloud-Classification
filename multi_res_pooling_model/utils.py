@@ -11,6 +11,7 @@ import scipy
 from scipy.spatial import cKDTree
 import sklearn.metrics
 import random
+from scipy.spatial.distance import cdist
 
 def getDataFiles(list_filename):
     return [line.rstrip() for line in open(list_filename)]
@@ -25,18 +26,21 @@ def loadDataFile(filename):
     return load_h5(filename)
 
 def adjacency(dist, idx):
-    # Description: set up weighted adjacency matrix
-    # input: (1)dist: pairwise distances of the nearest neighbor (2)idx: the according index of the pairwise distance
-    # return: weighted adjacency matrix(COO sparse matrix format)
+    """Return the adjacency matrix of a kNN graph."""
     M, k = dist.shape
-    # Calculate weight matrix by gaussian kernel
+    assert M, k == idx.shape
+    assert dist.min() >= 0
+    # Weights.
     sigma2 = np.mean(dist[:, -1]) ** 2
     #print sigma2
     dist = np.exp(- dist ** 2 / sigma2)
+
+    # Weight matrix.
     I = np.arange(0, M).repeat(k)
     J = idx.reshape(M * k)
     V = dist.reshape(M * k)
     W = scipy.sparse.coo_matrix((V, (I, J)), shape=(M, M))
+    # No self-connections.
     W.setdiag(0)
 
     # Non-directed graph.
@@ -45,7 +49,6 @@ def adjacency(dist, idx):
     return W
 
 def normalize_adj(adj):
-    # Description: calculate normalized adjacency matrix
     adj = scipy.sparse.coo_matrix(adj)
     rowsum = np.array(adj.sum(1))
     d_inv_sqrt = np.power(rowsum, -0.5).flatten()
@@ -54,32 +57,36 @@ def normalize_adj(adj):
     return adj.dot(d_mat_inv_sqrt).transpose().dot(d_mat_inv_sqrt).tocoo()
 
 def normalized_laplacian(adj):
-    # Description: calculate normalized laplacian matrix
     adj_normalized = normalize_adj(adj)
     norm_laplacian = scipy.sparse.eye(adj.shape[0]) - adj_normalized
     return norm_laplacian
 
 def scaled_laplacian(adj):
-    # Description: calculate recaled laplacian matrix
     adj_normalized = normalize_adj(adj)
     laplacian = scipy.sparse.eye(adj.shape[0]) - adj_normalized
     largest_eigval, _ = scipy.sparse.linalg.eigsh(laplacian, 1, which='LM')
     scaled_laplacian = (2. / largest_eigval[0]) * laplacian - scipy.sparse.eye(adj.shape[0])
     return scaled_laplacian
 
+def scaled_laplacian_appx(adj):
+    adj_normalized = normalize_adj(adj)
+    laplacian = scipy.sparse.eye(adj.shape[0]) - adj_normalized
+    scaled_laplacian = laplacian - scipy.sparse.eye(adj.shape[0])
+    return scaled_laplacian
+
+
+
 
 def get_mini_batch(x_signal,graph,y, start, end):
     return x_signal[start:end],graph[start:end],y[start:end]
 
 def add_noise(batch_data,sigma=0.015,clip=0.05):
-    # Description: add gaussian noise on the input data for model robustness
     batch_n,nodes_n_1,feature_n=batch_data.shape
     noise=np.clip(sigma*np.random.randn(batch_n,nodes_n_1,feature_n),-1*clip,clip)
     new_data=batch_data+noise
     return new_data
 
 def weight_dict_fc(trainLabel, para):
-    # Description: calculate the corresponding weight scaler for each class data (weighting scheme in weighted gradient descent)
     train_labels = []
     for i in range(len(trainLabel)):
         [train_labels.append(j) for j in trainLabel[i]]
@@ -97,7 +104,6 @@ def weight_dict_fc(trainLabel, para):
     return weight_dict
 
 def weights_calculation(batch_labels,weight_dict):
-    # Description: prepare the batch weight used in weighted gradient descent
     weights = []
     batch_labels = np.argmax(batch_labels,axis =1)
    
@@ -106,17 +112,14 @@ def weights_calculation(batch_labels,weight_dict):
     return weights
 
 def uniform_weight(trainLabel):
-    # Description: prepare the batch weight when training regular gradient descent
     weights = []
     [weights.append(1) for i in range(len(trainLabel))]
     return weights
 
 def farthest_sampling(batch_original_coor, M, k, batch_size, nodes_n):
-    #Description: selecting centroid points by performing farthest sampling, find the nearest neighbor of each centroid points
-
     # input    1) coordinate (B,N*3) 2) input features B*N*n1
     #          3)M centroid point number(cluster number) 4) k nearest neighbor number
-    # output:  1) batch index (B, M*k) record the index of the points that falls in each cluster
+    # output:  1) batch index (B, M*k)
     #          2) centroid points (B, M*3)
     batch_object_coor = batch_original_coor.reshape([batch_size, nodes_n, 3])  # (28,1024,3)
     batch_index = np.zeros([batch_size, M * k])
@@ -151,18 +154,63 @@ def farthest_sampling(batch_original_coor, M, k, batch_size, nodes_n):
 
     return batch_index, batch_centroid_points
 
+def farthest_sampling_new(batch_original_coor, M, k, batch_size, nodes_n):
+    # input    1) coordinate (B,N*3) 2) input features B*N*n1
+    #          3)M centroid point number(cluster number) 4) k nearest neighbor number
+    # output:  1) batch index (B, M*k)
+    #          2) centroid points (B, M*3)
+    batch_object_coor = batch_original_coor.reshape([batch_size, nodes_n, 3])  # (28,1024,3)
+    batch_index = np.zeros([batch_size, M * k])
+    batch_centroid_points = np.zeros([batch_size, M * 3])
+    for j in range(batch_size):
+        pc_object_coor = batch_object_coor[j]
+        # calculate pair wise distance
+        random.seed(1)
+        initial_index = random.randint(0, nodes_n-1)
+        initial_point = pc_object_coor[initial_index]
+        initial_point = initial_point[np.newaxis,:]
+        
+        distance = np.zeros((M, nodes_n))
+        distance[0] = cdist(initial_point, pc_object_coor)
+        solution_set = []
+        remaining_set = [i for i in range(nodes_n)]
+        a = random.randint(0, nodes_n - 1)
+        solution_set.append(a)
+        remaining_set.remove(a)
+        
+        # The mechanism of finding the next centroid point is calculate all the distance between remaining
+        # points with the existing centroid point and pick the one with the max min value among them
+        for i in range(M - 1):
+            d_r_s = distance[0:i+1,:]
+            a = np.min(d_r_s, axis=0)
+            max_index = np.argmax(a)
+            solution_set.append(max_index)
+            new_coor = pc_object_coor[max_index]
+            new_coor = new_coor[np.newaxis,:]
+            d = cdist(new_coor, pc_object_coor)
+            distance[i+1] = d
+        
+        select_coor = pc_object_coor[solution_set]
+        tree = cKDTree(pc_object_coor)
+        dd, ii = tree.query(select_coor, k=k)
+        index_select = ii.flatten()
+        batch_centroid_points[j] = select_coor.flatten()
+        batch_index[j] = index_select
+    return batch_index, batch_centroid_points
+
+
+
 def middle_graph_generation(centroid_coordinates, batch_size, M):
-    # Description: Calculate the second layer graph structure
     # (1)input:
     #   centroid coordinates (B,M*3)
     # (2)output:
     #   batch graph (B,M*M) in sparse matrix format
-    centroid_coordinates = centroid_coordinates.reshape(batch_size, 35, 3)
+    centroid_coordinates = centroid_coordinates.reshape(batch_size, M, 3)
     batch_middle_graph = np.zeros([batch_size, M * M])
     for i in range(len(centroid_coordinates)):
         select_coor = centroid_coordinates[i]
         tree = cKDTree(select_coor)
-        dd, ii = tree.query(select_coor, k=M)
+        dd, ii = tree.query(select_coor, k=M-5) #M-5 #40 #55
         A = adjacency(dd, ii)
         L_scaled = scaled_laplacian(A).todense()
         L_scaled = np.array(L_scaled).flatten()
