@@ -4,6 +4,7 @@ def weightVariables(shape, name):
     initial = tf.truncated_normal(shape=shape, mean=0, stddev=0.05)
     return tf.Variable(initial, name=name)
 
+
 def chebyshevCoefficient(chebyshevOrder, inputNumber, outputNumber):
     # Description: define weight matrix in graph convolutional layer
     chebyshevWeights = dict()
@@ -11,6 +12,7 @@ def chebyshevCoefficient(chebyshevOrder, inputNumber, outputNumber):
         initial = tf.truncated_normal(shape=[inputNumber, outputNumber], mean=0, stddev=0.05)
         chebyshevWeights['w_' + str(i)] = tf.Variable(initial)
     return chebyshevWeights
+
 
 def gcnLayer(inputPC, scaledLaplacian, pointNumber, inputFeatureN, outputFeatureN, chebyshev_order):
     # Description: graph convolutional layer with Relu activation

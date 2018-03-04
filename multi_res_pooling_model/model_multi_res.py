@@ -1,6 +1,6 @@
 import tensorflow as tf
 from layers import gcnLayer, graph_cluster_maxpooling, fullyConnected
-from utils import get_mini_batch, add_noise, weights_calculation, uniform_weight, farthest_sampling, middle_graph_generation
+from utils import get_mini_batch, add_noise, weights_calculation, uniform_weight,farthest_sampling_new, farthest_sampling, middle_graph_generation
 from sklearn.utils import shuffle
 from sklearn.preprocessing import label_binarize
 import numpy as np
@@ -10,7 +10,6 @@ def model_architecture(para):
     # Description: build model architecture (build data flow graphs)
     # Input: global parameter instance
     # Return: Placeholder Dictionary
-
     inputPC = tf.placeholder(tf.float32, [None, para.pointNumber, 3])
     inputGraph = tf.placeholder(tf.float32, [None, para.pointNumber * para.pointNumber])
     l2Graph = tf.placeholder(tf.float32, [None, para.clusterNumberL1 * para.clusterNumberL1])
@@ -33,25 +32,32 @@ def model_architecture(para):
                      outputFeatureN=para.gcn_1_filter_n,
                      chebyshev_order=para.chebyshev_1_Order)
     gcn_1_output = tf.nn.dropout(gcn_1, keep_prob=keep_prob_1)
-    # multi-resolution pooling layer 1
     gcn_1_pooling = graph_cluster_maxpooling(batch_index_l1, gcn_1_output, batch_size=batch_size,
                                              M=para.clusterNumberL1, k=para.nearestNeighborL1, n=para.gcn_1_filter_n)
+    
+    globalFeatures_1 = tf.reduce_max(gcn_1_pooling, axis=1)
     print gcn_1_pooling
 
     gcn_2 = gcnLayer(gcn_1_pooling, l2_scaledLaplacian, pointNumber=para.clusterNumberL1,
                      inputFeatureN=para.gcn_1_filter_n,
                      outputFeatureN=para.gcn_2_filter_n, chebyshev_order=para.chebyshev_1_Order)
 
-    gcn_2_pooling = tf.nn.dropout(gcn_2, keep_prob=keep_prob_1)
-
+    gcn_2_output = tf.nn.dropout(gcn_2, keep_prob=keep_prob_1)
+    # gcn_2_pooling = graph_cluster_maxpooling(batch_index_l2, gcn_2_output, batch_size=batch_size,
+    # M=para.clusterNumberL2, k=para.nearestNeighborL2, n=para.gcn_2_filter_n)
+    gcn_2_pooling = gcn_2_output
     print gcn_2_pooling
+
     globalFeatures = tf.reduce_max(gcn_2_pooling, axis=1)
     print globalFeatures
+
 
     globalFeatures = tf.nn.dropout(globalFeatures, keep_prob=keep_prob_2)
     print("The global feature is {}".format(globalFeatures))
 
-    globalFeatureN = para.gcn_2_filter_n
+    #final_concat_features = tf.concat([globalFeatures_1, globalFeatures], axis=1)
+    #final_concat_features = globalFeatures
+    globalFeatureN = para.gcn_2_filter_n*1
 
     # fully connected layer 1
     fc_layer_1 = fullyConnected(globalFeatures, inputFeatureN=globalFeatureN, outputFeatureN=para.fc_1_n)
@@ -72,13 +78,13 @@ def model_architecture(para):
 
     vars = tf.trainable_variables()
     loss_reg = tf.add_n([tf.nn.l2_loss(v) for v in vars if 'bias' not in v.name]) * 8e-6  # best: 8 #last: 10
-    loss = loss + loss_reg
+    loss_total = loss + loss_reg
 
     correct_prediction = tf.equal(predictLabels, tf.argmax(outputLabel, axis=1))
     acc = tf.cast(correct_prediction, tf.float32)
     acc = tf.reduce_mean(acc)
 
-    train = tf.train.AdamOptimizer(learning_rate=lr).minimize(loss)
+    train = tf.train.AdamOptimizer(learning_rate=lr).minimize(loss_total)
 
     total_parameters = 0
     for variable in tf.trainable_variables():
@@ -93,7 +99,7 @@ def model_architecture(para):
     init = tf.global_variables_initializer()
     sess = tf.Session()
     sess.run(init)
-    trainOperaion = {'train': train, 'loss': loss, 'acc': acc, 'loss_reg': loss_reg, 'inputPC': inputPC,
+    trainOperaion = {'train': train, 'loss': loss, 'acc': acc, 'loss_total': loss_total ,'loss_reg': loss_reg, 'inputPC': inputPC,
                      'inputGraph': inputGraph, 'l2Graph': l2Graph, 'outputLabel': outputLabel, 'weights': weights,
                      'predictLabels': predictLabels, 'batch_index_l1': batch_index_l1,
                      'keep_prob_1': keep_prob_1, 'keep_prob_2': keep_prob_2, 'lr': lr, 'batch_size': batch_size}
@@ -107,8 +113,6 @@ def trainOneEpoch(inputCoor, inputGraph, inputLabel, para, sess, trainOperaion,
     #        (4) para: global Parameters  (5) sess: Session (6) trainOperaion: placeholder dictionary
     #        (7) weight_dict: weighting scheme used of weighted gradient descnet (8)learningRate: learning rate for current epoch
     # Return: average loss, acc, regularization loss for training set
-
-
     dataChunkLoss = []
     dataChunkAcc = []
     dataChunkRegLoss = []
@@ -129,13 +133,16 @@ def trainOneEpoch(inputCoor, inputGraph, inputLabel, para, sess, trainOperaion,
             batchCoor, batchGraph, batchLabel = get_mini_batch(xTrain, graphTrain, labelTrain, start, end)
             batchGraph = batchGraph.todense()
             batchCoor = add_noise(batchCoor, sigma=0.008, clip=0.02)
-            # batchWeight = weights_calculation(batchLabel, weight_dict)
-            batchWeight = uniform_weight(batchLabel)
-            # select the centroid points by farthest sampling and get the index of each centroid points' n nearest neighbors
-            batchIndexL1, centroid_coordinates = farthest_sampling(batchCoor, M=para.clusterNumberL1,
+	    if para.weighting_scheme == 'uniform':
+		batchWeight = uniform_weight(batchLabel)
+	    elif para.weighting_scheme == 'weighted':
+                batchWeight = weights_calculation(batchLabel, weight_dict)
+            else:
+                print 'please enter a valid weighting scheme'
+
+            batchIndexL1, centroid_coordinates = farthest_sampling_new(batchCoor, M=para.clusterNumberL1,
                                                                    k=para.nearestNeighborL1, batch_size=batchSize,
                                                                    nodes_n=para.pointNumber)
-            # setting up the graph structure for the second gcn layer(constructed by centroid points)
             batchMiddleGraph = middle_graph_generation(centroid_coordinates, batch_size = batchSize, M = para.clusterNumberL1)
 
             feed_dict = {trainOperaion['inputPC']: batchCoor, trainOperaion['inputGraph']: batchGraph,
@@ -146,7 +153,7 @@ def trainOneEpoch(inputCoor, inputGraph, inputLabel, para, sess, trainOperaion,
                          trainOperaion['l2Graph']: batchMiddleGraph, trainOperaion['batch_size']: para.batchSize}
 
             opt, loss_train, acc_train, loss_reg_train = sess.run(
-                [trainOperaion['train'], trainOperaion['loss'], trainOperaion['acc'], trainOperaion['loss_reg']],
+                [trainOperaion['train'], trainOperaion['loss_total'], trainOperaion['acc'], trainOperaion['loss_reg']],
                 feed_dict=feed_dict)
 
             batch_loss.append(loss_train)
@@ -184,8 +191,8 @@ def evaluateOneEpoch(inputCoor, inputGraph, inputLabel, para, sess, trainOperaio
             batchCoor, batchGraph, batchLabel = get_mini_batch(xTest, graphTest, labelBinarize, start, end)
             batchWeight = uniform_weight(batchLabel)
             batchGraph = batchGraph.todense()
-            # select the centroid points by farthest sampling and get the index of each centroid points n nearest neighbors
-            batchIndexL1, centroid_coordinates = farthest_sampling(batchCoor, M=para.clusterNumberL1,
+
+            batchIndexL1, centroid_coordinates = farthest_sampling_new(batchCoor, M=para.clusterNumberL1,
                                                                    k=para.nearestNeighborL1, batch_size=test_batch_size,
                                                                    nodes_n=para.pointNumber)
 
