@@ -2,7 +2,8 @@
 
 This is a TensorFlow implementation of using graph convolutional neural network to solve 3D point cloud classification problem. Details are decribed in the short paper A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION and master project report in the folder Documents.
 
-If you find this code usefule please cite the following paper: Yingxue Zhang and Michael Rabbat, "A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION", International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018
+If you find this code usefule please cite the following paper: 
+Yingxue Zhang and Michael Rabbat, "A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION", International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018
 
 ## Getting Started
 ### Prerequisites
