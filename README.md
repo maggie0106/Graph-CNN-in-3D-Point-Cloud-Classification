@@ -5,6 +5,7 @@ This is a TensorFlow implementation of using graph convolutional neural network 
 If you find this code usefule please cite the following paper: 
 
 Yingxue Zhang and Michael Rabbat, "A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION", International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2018
+
 Link: http://networks.ece.mcgill.ca/sites/default/files/A%20GRAPH-CNN%20FOR%203D%20POINT%20CLOUD%20CLASSIFICATION.pdf
 
 ## Getting Started
