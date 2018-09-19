@@ -8,7 +8,7 @@ Yingxue Zhang and Michael Rabbat, "A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION
 
 Link: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8462291
 
-bibtex{
+Bibtex:
 
 @inproceedings{ZhangR_18_gcnn_point_cloud,
 
@@ -25,9 +25,6 @@ address = {Calgary, Canada},
   year      = {2018}
   
 }
-
-}
-
 
 
 
