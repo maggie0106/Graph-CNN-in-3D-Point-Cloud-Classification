@@ -9,16 +9,27 @@ Yingxue Zhang and Michael Rabbat, "A GRAPH-CNN FOR 3D POINT CLOUD CLASSIFICATION
 Link: https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8462291
 
 bibtex{
+
 @inproceedings{ZhangR_18_gcnn_point_cloud,
+
   author    = {Yingxue Zhang and
                Michael Rabbat},
+               
   title     = {A Graph-CNN for 3D Point Cloud Classification},
+  
   booktitle = {International Conference on Acoustics, Speech and Signal
                Processing (ICASSP)},
+               
 address = {Calgary, Canada},
+
   year      = {2018}
+  
 }
+
 }
+
+
+
 
 ## Getting Started
 ### Prerequisites
